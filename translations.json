@@ -1,0 +1,712 @@
+{
+  "en": {
+    "site": {
+      "title": "FastFun Remote Control - RF Remote & WiFi Smart Switch Solutions",
+      "description": "Leading manufacturer of RF remotes, controllers, WiFi switches, and car remote aftermarket solutions since 2010.",
+      "keywords": "RF remote control, WiFi smart switch, car remote aftermarket, RF controller, RF kit"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "products": "Products",
+      "blog": "Blog",
+      "contact": "Contact",
+      "getQuote": "Get Quote"
+    },
+    "home": {
+      "heroTitle": "Innovative Remote Control Solutions",
+      "heroSubtitle": "Professional RF Remotes, WiFi Switches & Car Remote Aftermarket Solutions",
+      "heroCta": "Explore Products",
+      "features": {
+        "title": "Why Choose FastFun",
+        "quality": {
+          "title": "Premium Quality",
+          "description": "ISO certified manufacturing with rigorous quality control"
+        },
+        "innovation": {
+          "title": "Cutting-Edge Technology",
+          "description": "Latest RF and WiFi technology for reliable performance"
+        },
+        "support": {
+          "title": "Expert Support",
+          "description": "Professional technical support and customization services"
+        }
+      },
+      "productsPreview": {
+        "title": "Our Product Range",
+        "subtitle": "Comprehensive remote control solutions for every need"
+      }
+    },
+    "about": {
+      "title": "About FastFun Remote Control",
+      "mission": "Our Mission",
+      "missionText": "To provide innovative, reliable, and affordable remote control solutions that enhance convenience and security for customers worldwide.",
+      "story": "Our Story",
+      "storyText": "Founded in 2010, FastFun Remote Control has grown from a small workshop to a leading manufacturer of remote control solutions. With over a decade of experience in RF technology and smart home integration, we've helped thousands of businesses and homeowners enhance their control systems.",
+      "values": {
+        "title": "Our Values",
+        "innovation": "Continuous Innovation",
+        "quality": "Uncompromising Quality",
+        "customer": "Customer-Centric Approach",
+        "integrity": "Business Integrity"
+      },
+      "cta": "Contact Us"
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": "Professional remote control solutions for every application",
+      "rfRemote": {
+        "title": "RF Remote",
+        "description": "High-performance RF remote controls with reliable signal transmission and long battery life.",
+        "features": ["433MHz frequency", "100m range", "Low power consumption", "Customizable buttons"],
+        "cta": "Get Quote"
+      },
+      "rfController": {
+        "title": "RF Controller",
+        "description": "Advanced RF controllers for complex automation systems with multi-device support.",
+        "features": ["Multi-device control", "Programming interface", "Signal encryption", "Wall-mountable design"],
+        "cta": "Get Quote"
+      },
+      "rfKit": {
+        "title": "RF Kit",
+        "description": "Complete RF control kits with transmitter and receiver for easy installation.",
+        "features": ["Plug-and-play setup", "Complete solution", "DIY friendly", "Technical manual included"],
+        "cta": "Get Quote"
+      },
+      "wifiSwitch": {
+        "title": "WiFi Switch",
+        "description": "Smart WiFi switches for home automation with mobile app control and scheduling.",
+        "features": ["Mobile app control", "Voice assistant compatible", "Energy monitoring", "Timer functions"],
+        "cta": "Get Quote"
+      },
+      "carRemote": {
+        "title": "Car Remote",
+        "description": "Aftermarket car remote solutions for keyless entry and security systems.",
+        "features": ["Universal compatibility", "Rolling code technology", "Long battery life", "Easy programming"],
+        "cta": "Get Quote"
+      }
+    },
+    "blog": {
+      "title": "Technical Blog",
+      "subtitle": "Insights and innovations in remote control technology",
+      "article1": {
+        "title": "The Evolution of RF Remote Control Technology",
+        "excerpt": "Explore how RF remote controls have evolved from simple devices to sophisticated smart home components.",
+        "date": "October 15, 2024",
+        "author": "Technical Team",
+        "tags": ["RF Technology", "Innovation", "Smart Home"]
+      },
+      "article2": {
+        "title": "Choosing the Right WiFi Switch for Your Smart Home",
+        "excerpt": "A comprehensive guide to selecting and installing WiFi switches for optimal home automation.",
+        "date": "October 8, 2024",
+        "author": "Product Team",
+        "tags": ["WiFi Switch", "Smart Home", "Installation"]
+      },
+      "article3": {
+        "title": "Car Remote Aftermarket: Benefits and Considerations",
+        "excerpt": "Understanding the advantages of aftermarket car remotes and how to choose the right solution.",
+        "date": "October 1, 2024",
+        "author": "Automotive Team",
+        "tags": ["Car Remote", "Aftermarket", "Security"]
+      },
+      "subscribe": {
+        "title": "Stay Updated",
+        "description": "Subscribe to our newsletter for the latest technical insights and product updates.",
+        "placeholder": "Enter your email",
+        "button": "Subscribe"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch with our team for inquiries and support",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "language": "Preferred Language",
+        "submit": "Send Message",
+        "success": "Thank you for your message! We'll get back to you soon."
+      },
+      "info": {
+        "title": "Contact Information",
+        "email": "Email",
+        "phone": "Phone/WhatsApp",
+        "address": "Address"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 FastFun Remote Control. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "es": {
+    "site": {
+      "title": "FastFun Remote Control - Soluciones de Control Remoto RF y WiFi",
+      "description": "Fabricante líder de controles remotos RF, controladores, interruptores WiFi y soluciones de control remoto para automóviles desde 2010.",
+      "keywords": "control remoto RF, interruptor inteligente WiFi, control remoto de automóvil aftermarket, controlador RF, kit RF"
+    },
+    "nav": {
+      "home": "Inicio",
+      "about": "Nosotros",
+      "products": "Productos",
+      "blog": "Blog",
+      "contact": "Contacto",
+      "getQuote": "Cotizar"
+    },
+    "home": {
+      "heroTitle": "Soluciones Innovadoras de Control Remoto",
+      "heroSubtitle": "Controles Remotos RF Profesionales, Interruptores WiFi y Soluciones Aftermarket para Automóviles",
+      "heroCta": "Explorar Productos",
+      "features": {
+        "title": "¿Por Qué Elegir FastFun?",
+        "quality": {
+          "title": "Calidad Premium",
+          "description": "Fabricación certificada ISO con control de calidad riguroso"
+        },
+        "innovation": {
+          "title": "Tecnología de Vanguardia",
+          "description": "Última tecnología RF y WiFi para rendimiento confiable"
+        },
+        "support": {
+          "title": "Soporte Experto",
+          "description": "Soporte técnico profesional y servicios de personalización"
+        }
+      },
+      "productsPreview": {
+        "title": "Nuestra Gama de Productos",
+        "subtitle": "Soluciones integrales de control remoto para cada necesidad"
+      }
+    },
+    "about": {
+      "title": "Acerca de FastFun Remote Control",
+      "mission": "Nuestra Misión",
+      "missionText": "Proporcionar soluciones de control remoto innovadoras, confiables y asequibles que mejoren la conveniencia y seguridad para clientes en todo el mundo.",
+      "story": "Nuestra Historia",
+      "storyText": "Fundada en 2010, FastFun Remote Control ha crecido desde un pequeño taller hasta convertirse en un fabricante líder de soluciones de control remoto. Con más de una década de experiencia en tecnología RF e integración de hogares inteligentes, hemos ayudado a miles de empresas y propietarios a mejorar sus sistemas de control.",
+      "values": {
+        "title": "Nuestros Valores",
+        "innovation": "Innovación Continua",
+        "quality": "Calidad Intransigente",
+        "customer": "Enfoque Centrado en el Cliente",
+        "integrity": "Integridad Comercial"
+      },
+      "cta": "Contáctanos"
+    },
+    "products": {
+      "title": "Nuestros Productos",
+      "subtitle": "Soluciones profesionales de control remoto para cada aplicación",
+      "rfRemote": {
+        "title": "Control Remoto RF",
+        "description": "Controles remotos RF de alto rendimiento con transmisión de señal confiable y larga duración de batería.",
+        "features": ["Frecuencia 433MHz", "Alcance 100m", "Bajo consumo de energía", "Botones personalizables"],
+        "cta": "Cotizar"
+      },
+      "rfController": {
+        "title": "Controlador RF",
+        "description": "Controladores RF avanzados para sistemas de automatización complejos con soporte para múltiples dispositivos.",
+        "features": ["Control multi-dispositivo", "Interfaz de programación", "Cifrado de señal", "Diseño montable en pared"],
+        "cta": "Cotizar"
+      },
+      "rfKit": {
+        "title": "Kit RF",
+        "description": "Kits completos de control RF con transmisor y receptor para fácil instalación.",
+        "features": ["Configuración plug-and-play", "Solución completa", "Amigable para DIY", "Manual técnico incluido"],
+        "cta": "Cotizar"
+      },
+      "wifiSwitch": {
+        "title": "Interruptor WiFi",
+        "description": "Interruptores WiFi inteligentes para automatización del hogar con control de aplicación móvil y programación.",
+        "features": ["Control por aplicación móvil", "Compatible con asistente de voz", "Monitoreo de energía", "Funciones de temporizador"],
+        "cta": "Cotizar"
+      },
+      "carRemote": {
+        "title": "Control Remoto para Automóvil",
+        "description": "Soluciones de control remoto aftermarket para automóviles para sistemas de entrada sin llave y seguridad.",
+        "features": ["Compatibilidad universal", "Tecnología de código rodante", "Larga duración de batería", "Programación fácil"],
+        "cta": "Cotizar"
+      }
+    },
+    "blog": {
+      "title": "Blog Técnico",
+      "subtitle": "Perspectivas e innovaciones en tecnología de control remoto",
+      "article1": {
+        "title": "La Evolución de la Tecnología de Control Remoto RF",
+        "excerpt": "Explora cómo los controles remotos RF han evolucionado desde dispositivos simples hasta componentes sofisticados de hogares inteligentes.",
+        "date": "15 de octubre de 2024",
+        "author": "Equipo Técnico",
+        "tags": ["Tecnología RF", "Innovación", "Hogar Inteligente"]
+      },
+      "article2": {
+        "title": "Elegir el Interruptor WiFi Adecuado para tu Hogar Inteligente",
+        "excerpt": "Una guía completa para seleccionar e instalar interruptores WiFi para automatización óptima del hogar.",
+        "date": "8 de octubre de 2024",
+        "author": "Equipo de Producto",
+        "tags": ["Interruptor WiFi", "Hogar Inteligente", "Instalación"]
+      },
+      "article3": {
+        "title": "Aftermarket de Control Remoto para Automóviles: Beneficios y Consideraciones",
+        "excerpt": "Comprender las ventajas de los controles remotos aftermarket para automóviles y cómo elegir la solución adecuada.",
+        "date": "1 de octubre de 2024",
+        "author": "Equipo Automotriz",
+        "tags": ["Control Remoto para Automóvil", "Aftermarket", "Seguridad"]
+      },
+      "subscribe": {
+        "title": "Mantente Actualizado",
+        "description": "Suscríbete a nuestro boletín para las últimas perspectivas técnicas y actualizaciones de productos.",
+        "placeholder": "Ingresa tu correo electrónico",
+        "button": "Suscribirse"
+      }
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "subtitle": "Ponte en contacto con nuestro equipo para consultas y soporte",
+      "form": {
+        "name": "Nombre",
+        "email": "Correo Electrónico",
+        "message": "Mensaje",
+        "language": "Idioma Preferido",
+        "submit": "Enviar Mensaje",
+        "success": "¡Gracias por tu mensaje! Te responderemos pronto."
+      },
+      "info": {
+        "title": "Información de Contacto",
+        "email": "Correo Electrónico",
+        "phone": "Teléfono/WhatsApp",
+        "address": "Dirección"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 FastFun Remote Control. Todos los derechos reservados.",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio"
+    }
+  },
+  "pt": {
+    "site": {
+      "title": "FastFun Remote Control - Soluções de Controle Remoto RF e WiFi",
+      "description": "Fabricante líder de controles remotos RF, controladores, interruptores WiFi e soluções de controle remoto para automóveis desde 2010.",
+      "keywords": "controle remoto RF, interruptor inteligente WiFi, controle remoto de carro aftermarket, controlador RF, kit RF"
+    },
+    "nav": {
+      "home": "Início",
+      "about": "Sobre Nós",
+      "products": "Produtos",
+      "blog": "Blog",
+      "contact": "Contato",
+      "getQuote": "Orçar"
+    },
+    "home": {
+      "heroTitle": "Soluções Inovadoras de Controle Remoto",
+      "heroSubtitle": "Controles Remotos RF Profissionais, Interruptores WiFi e Soluções Aftermarket para Automóveis",
+      "heroCta": "Explorar Produtos",
+      "features": {
+        "title": "Por Que Escolher FastFun?",
+        "quality": {
+          "title": "Qualidade Premium",
+          "description": "Fabricação certificada ISO com controle de qualidade rigoroso"
+        },
+        "innovation": {
+          "title": "Tecnologia de Ponta",
+          "description": "Mais recente tecnologia RF e WiFi para desempenho confiável"
+        },
+        "support": {
+          "title": "Suporte Especializado",
+          "description": "Suporte técnico profissional e serviços de personalização"
+        }
+      },
+      "productsPreview": {
+        "title": "Nossa Linha de Produtos",
+        "subtitle": "Soluções completas de controle remoto para cada necessidade"
+      }
+    },
+    "about": {
+      "title": "Sobre a FastFun Remote Control",
+      "mission": "Nossa Missão",
+      "missionText": "Fornecer soluções de controle remoto inovadoras, confiáveis e acessíveis que melhorem a conveniência e segurança para clientes em todo o mundo.",
+      "story": "Nossa História",
+      "storyText": "Fundada em 2010, a FastFun Remote Control cresceu de uma pequena oficina para se tornar uma fabricante líder de soluções de controle remoto. Com mais de uma década de experiência em tecnologia RF e integração de casas inteligentes, ajudamos milhares de empresas e proprietários a aprimorar seus sistemas de controle.",
+      "values": {
+        "title": "Nossos Valores",
+        "innovation": "Inovação Contínua",
+        "quality": "Qualidade Intransigente",
+        "customer": "Abordagem Centrada no Cliente",
+        "integrity": "Integridade nos Negócios"
+      },
+      "cta": "Entre em Contato"
+    },
+    "products": {
+      "title": "Nossos Produtos",
+      "subtitle": "Soluções profissionais de controle remoto para cada aplicação",
+      "rfRemote": {
+        "title": "Controle Remoto RF",
+        "description": "Controles remotos RF de alto desempenho com transmissão de sinal confiável e longa vida útil da bateria.",
+        "features": ["Frequência 433MHz", "Alcance 100m", "Baixo consumo de energia", "Botões personalizáveis"],
+        "cta": "Orçar"
+      },
+      "rfController": {
+        "title": "Controlador RF",
+        "description": "Controladores RF avançados para sistemas de automação complexos com suporte para múltiplos dispositivos.",
+        "features": ["Controle multi-dispositivo", "Interface de programação", "Criptografia de sinal", "Design montável na parede"],
+        "cta": "Orçar"
+      },
+      "rfKit": {
+        "title": "Kit RF",
+        "description": "Kits completos de controle RF com transmissor e receptor para fácil instalação.",
+        "features": ["Configuração plug-and-play", "Solução completa", "Amigável para DIY", "Manual técnico incluído"],
+        "cta": "Orçar"
+      },
+      "wifiSwitch": {
+        "title": "Interruptor WiFi",
+        "description": "Interruptores WiFi inteligentes para automação residencial com controle de aplicativo móvel e agendamento.",
+        "features": ["Controle por aplicativo móvel", "Compatível com assistente de voz", "Monitoramento de energia", "Funções de temporizador"],
+        "cta": "Orçar"
+      },
+      "carRemote": {
+        "title": "Controle Remoto para Carro",
+        "description": "Soluções de controle remoto aftermarket para carros para sistemas de entrada sem chave e segurança.",
+        "features": ["Compatibilidade universal", "Tecnologia de código rolante", "Longa vida útil da bateria", "Programação fácil"],
+        "cta": "Orçar"
+      }
+    },
+    "blog": {
+      "title": "Blog Técnico",
+      "subtitle": "Insights e inovações em tecnologia de controle remoto",
+      "article1": {
+        "title": "A Evolução da Tecnologia de Controle Remoto RF",
+        "excerpt": "Explore como os controles remotos RF evoluíram de dispositivos simples para componentes sofisticados de casas inteligentes.",
+        "date": "15 de outubro de 2024",
+        "author": "Equipe Técnica",
+        "tags": ["Tecnologia RF", "Inovação", "Casa Inteligente"]
+      },
+      "article2": {
+        "title": "Escolhendo o Interruptor WiFi Certo para sua Casa Inteligente",
+        "excerpt": "Um guia completo para selecionar e instalar interruptores WiFi para automação residencial ideal.",
+        "date": "8 de outubro de 2024",
+        "author": "Equipe de Produto",
+        "tags": ["Interruptor WiFi", "Casa Inteligente", "Instalação"]
+      },
+      "article3": {
+        "title": "Aftermarket de Controle Remoto para Carros: Benefícios e Considerações",
+        "excerpt": "Compreendendo as vantagens dos controles remotos aftermarket para carros e como escolher a solução certa.",
+        "date": "1 de outubro de 2024",
+        "author": "Equipe Automotiva",
+        "tags": ["Controle Remoto para Carro", "Aftermarket", "Segurança"]
+      },
+      "subscribe": {
+        "title": "Mantenha-se Atualizado",
+        "description": "Assine nossa newsletter para os últimos insights técnicos e atualizações de produtos.",
+        "placeholder": "Digite seu e-mail",
+        "button": "Assinar"
+      }
+    },
+    "contact": {
+      "title": "Entre em Contato",
+      "subtitle": "Entre em contato com nossa equipe para consultas e suporte",
+      "form": {
+        "name": "Nome",
+        "email": "E-mail",
+        "message": "Mensagem",
+        "language": "Idioma Preferido",
+        "submit": "Enviar Mensagem",
+        "success": "Obrigado pela sua mensagem! Responderemos em breve."
+      },
+      "info": {
+        "title": "Informações de Contato",
+        "email": "E-mail",
+        "phone": "Telefone/WhatsApp",
+        "address": "Endereço"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 FastFun Remote Control. Todos os direitos reservados.",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Serviço"
+    }
+  },
+  "fr": {
+    "site": {
+      "title": "FastFun Remote Control - Solutions de Contrôle à Distance RF et WiFi",
+      "description": "Fabricant leader de télécommandes RF, contrôleurs, interrupteurs WiFi et solutions de contrôle à distance pour voitures depuis 2010.",
+      "keywords": "télécommande RF, interrupteur intelligent WiFi, télécommande voiture aftermarket, contrôleur RF, kit RF"
+    },
+    "nav": {
+      "home": "Accueil",
+      "about": "À Propos",
+      "products": "Produits",
+      "blog": "Blog",
+      "contact": "Contact",
+      "getQuote": "Devis"
+    },
+    "home": {
+      "heroTitle": "Solutions Innovantes de Contrôle à Distance",
+      "heroSubtitle": "Télécommandes RF Professionnelles, Interrupteurs WiFi et Solutions Aftermarket pour Voitures",
+      "heroCta": "Explorer les Produits",
+      "features": {
+        "title": "Pourquoi Choisir FastFun?",
+        "quality": {
+          "title": "Qualité Premium",
+          "description": "Fabrication certifiée ISO avec contrôle qualité rigoureux"
+        },
+        "innovation": {
+          "title": "Technologie de Pointe",
+          "description": "Dernière technologie RF et WiFi pour des performances fiables"
+        },
+        "support": {
+          "title": "Support Expert",
+          "description": "Support technique professionnel et services de personnalisation"
+        }
+      },
+      "productsPreview": {
+        "title": "Notre Gamme de Produits",
+        "subtitle": "Solutions complètes de contrôle à distance pour chaque besoin"
+      }
+    },
+    "about": {
+      "title": "À Propos de FastFun Remote Control",
+      "mission": "Notre Mission",
+      "missionText": "Fournir des solutions de contrôle à distance innovantes, fiables et abordables qui améliorent la commodité et la sécurité pour les clients du monde entier.",
+      "story": "Notre Histoire",
+      "storyText": "Fondée en 2010, FastFun Remote Control est passée d'un petit atelier à un fabricant leader de solutions de contrôle à distance. Avec plus d'une décennie d'expérience en technologie RF et intégration de maisons intelligentes, nous avons aidé des milliers d'entreprises et de propriétaires à améliorer leurs systèmes de contrôle.",
+      "values": {
+        "title": "Nos Valeurs",
+        "innovation": "Innovation Continue",
+        "quality": "Qualité Intransigeante",
+        "customer": "Approche Centrée sur le Client",
+        "integrity": "Intégrité Commerciale"
+      },
+      "cta": "Contactez-nous"
+    },
+    "products": {
+      "title": "Nos Produits",
+      "subtitle": "Solutions professionnelles de contrôle à distance pour chaque application",
+      "rfRemote": {
+        "title": "Télécommande RF",
+        "description": "Télécommandes RF haute performance avec transmission de signal fiable et longue durée de vie de batterie.",
+        "features": ["Fréquence 433MHz", "Portée 100m", "Faible consommation d'énergie", "Boutons personnalisables"],
+        "cta": "Devis"
+      },
+      "rfController": {
+        "title": "Contrôleur RF",
+        "description": "Contrôleurs RF avancés pour systèmes d'automatisation complexes avec support multi-appareils.",
+        "features": ["Contrôle multi-appareils", "Interface de programmation", "Chiffrement de signal", "Design montable au mur"],
+        "cta": "Devis"
+      },
+      "rfKit": {
+        "title": "Kit RF",
+        "description": "Kits complets de contrôle RF avec émetteur et récepteur pour installation facile.",
+        "features": ["Configuration plug-and-play", "Solution complète", "Convivial pour DIY", "Manuel technique inclus"],
+        "cta": "Devis"
+      },
+      "wifiSwitch": {
+        "title": "Interrupteur WiFi",
+        "description": "Interrupteurs WiFi intelligents pour automatisation domestique avec contrôle application mobile et planification.",
+        "features": ["Contrôle application mobile", "Compatible assistant vocal", "Surveillance énergie", "Fonctions minuteur"],
+        "cta": "Devis"
+      },
+      "carRemote": {
+        "title": "Télécommande Voiture",
+        "description": "Solutions de télécommande aftermarket pour voitures pour systèmes d'entrée sans clé et sécurité.",
+        "features": ["Compatibilité universelle", "Technologie code roulant", "Longue durée de vie batterie", "Programmation facile"],
+        "cta": "Devis"
+      }
+    },
+    "blog": {
+      "title": "Blog Technique",
+      "subtitle": "Perspectives et innovations en technologie de contrôle à distance",
+      "article1": {
+        "title": "L'Évolution de la Technologie de Télécommande RF",
+        "excerpt": "Explorez comment les télécommandes RF ont évolué de dispositifs simples à composants sophistiqués de maisons intelligentes.",
+        "date": "15 octobre 2024",
+        "author": "Équipe Technique",
+        "tags": ["Technologie RF", "Innovation", "Maison Intelligente"]
+      },
+      "article2": {
+        "title": "Choisir le Bon Interrupteur WiFi pour votre Maison Intelligente",
+        "excerpt": "Un guide complet pour sélectionner et installer des interrupteurs WiFi pour une automatisation domestique optimale.",
+        "date": "8 octobre 2024",
+        "author": "Équipe Produit",
+        "tags": ["Interrupteur WiFi", "Maison Intelligente", "Installation"]
+      },
+      "article3": {
+        "title": "Aftermarket Télécommande Voiture: Avantages et Considérations",
+        "excerpt": "Comprendre les avantages des télécommandes aftermarket pour voitures et comment choisir la bonne solution.",
+        "date": "1 octobre 2024",
+        "author": "Équipe Automobile",
+        "tags": ["Télécommande Voiture", "Aftermarket", "Sécurité"]
+      },
+      "subscribe": {
+        "title": "Restez Informé",
+        "description": "Abonnez-vous à notre newsletter pour les derniers insights techniques et mises à jour de produits.",
+        "placeholder": "Entrez votre email",
+        "button": "S'abonner"
+      }
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "subtitle": "Contactez notre équipe pour des demandes et du support",
+      "form": {
+        "name": "Nom",
+        "email": "Email",
+        "message": "Message",
+        "language": "Langue Préférée",
+        "submit": "Envoyer le Message",
+        "success": "Merci pour votre message! Nous vous répondrons bientôt."
+      },
+      "info": {
+        "title": "Informations de Contact",
+        "email": "Email",
+        "phone": "Téléphone/WhatsApp",
+        "address": "Adresse"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 FastFun Remote Control. Tous droits réservés.",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation"
+    }
+  },
+  "it": {
+    "site": {
+      "title": "FastFun Remote Control - Soluzioni di Telecomando RF e WiFi",
+      "description": "Produttore leader di telecomandi RF, controller, interruttori WiFi e soluzioni di telecomando per auto dal 2010.",
+      "keywords": "telecomando RF, interruttore intelligente WiFi, telecomando auto aftermarket, controller RF, kit RF"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "Chi Siamo",
+      "products": "Prodotti",
+      "blog": "Blog",
+      "contact": "Contatto",
+      "getQuote": "Preventivo"
+    },
+    "home": {
+      "heroTitle": "Soluzioni Innovative di Telecomando",
+      "heroSubtitle": "Telecomandi RF Professionali, Interruttori WiFi e Soluzioni Aftermarket per Auto",
+      "heroCta": "Esplora Prodotti",
+      "features": {
+        "title": "Perché Scegliere FastFun?",
+        "quality": {
+          "title": "Qualità Premium",
+          "description": "Produzione certificata ISO con controllo qualità rigoroso"
+        },
+        "innovation": {
+          "title": "Tecnologia All'avanguardia",
+          "description": "Ultima tecnologia RF e WiFi per prestazioni affidabili"
+        },
+        "support": {
+          "title": "Supporto Esperto",
+          "description": "Supporto tecnico professionale e servizi di personalizzazione"
+        }
+      },
+      "productsPreview": {
+        "title": "La Nostra Gamma di Prodotti",
+        "subtitle": "Soluzioni complete di telecomando per ogni esigenza"
+      }
+    },
+    "about": {
+      "title": "Chi Siamo - FastFun Remote Control",
+      "mission": "La Nostra Missione",
+      "missionText": "Fornire soluzioni di telecomando innovative, affidabili e convenienti che migliorino la comodità e la sicurezza per clienti in tutto il mondo.",
+      "story": "La Nostra Storia",
+      "storyText": "Fondata nel 2010, FastFun Remote Control è cresciuta da un piccolo laboratorio a un produttore leader di soluzioni di telecomando. Con oltre un decennio di esperienza in tecnologia RF e integrazione di case intelligenti, abbiamo aiutato migliaia di aziende e proprietari a migliorare i loro sistemi di controllo.",
+      "values": {
+        "title": "I Nostri Valori",
+        "innovation": "Innovazione Continua",
+        "quality": "Qualità Intransigente",
+        "customer": "Approccio Centrato sul Cliente",
+        "integrity": "Integrità Commerciale"
+      },
+      "cta": "Contattaci"
+    },
+    "products": {
+      "title": "I Nostri Prodotti",
+      "subtitle": "Soluzioni professionali di telecomando per ogni applicazione",
+      "rfRemote": {
+        "title": "Telecomando RF",
+        "description": "Telecomandi RF ad alte prestazioni con trasmissione del segnale affidabile e lunga durata della batteria.",
+        "features": ["Frequenza 433MHz", "Raggio 100m", "Basso consumo energetico", "Pulsanti personalizzabili"],
+        "cta": "Preventivo"
+      },
+      "rfController": {
+        "title": "Controller RF",
+        "description": "Controller RF avanzati per sistemi di automazione complessi con supporto multi-dispositivo.",
+        "features": ["Controllo multi-dispositivo", "Interfaccia di programmazione", "Crittografia del segnale", "Design montabile a parete"],
+        "cta": "Preventivo"
+      },
+      "rfKit": {
+        "title": "Kit RF",
+        "description": "Kit completi di controllo RF con trasmettitore e ricevitore per facile installazione.",
+        "features": ["Configurazione plug-and-play", "Soluzione completa", "Adatto per fai-da-te", "Manuale tecnico incluso"],
+        "cta": "Preventivo"
+      },
+      "wifiSwitch": {
+        "title": "Interruttore WiFi",
+        "description": "Interruttori WiFi intelligenti per automazione domestica con controllo app mobile e programmazione.",
+        "features": ["Controllo app mobile", "Compatibile assistente vocale", "Monitoraggio energia", "Funzioni timer"],
+        "cta": "Preventivo"
+      },
+      "carRemote": {
+        "title": "Telecomando Auto",
+        "description": "Soluzioni di telecomando aftermarket per auto per sistemi di ingresso senza chiave e sicurezza.",
+        "features": ["Compatibilità universale", "Tecnologia codice rotolante", "Lunga durata batteria", "Programmazione facile"],
+        "cta": "Preventivo"
+      }
+    },
+    "blog": {
+      "title": "Blog Tecnico",
+      "subtitle": "Approfondimenti e innovazioni nella tecnologia dei telecomandi",
+      "article1": {
+        "title": "L'Evoluzione della Tecnologia del Telecomando RF",
+        "excerpt": "Esplora come i telecomandi RF sono evoluti da semplici dispositivi a componenti sofisticati di case intelligenti.",
+        "date": "15 ottobre 2024",
+        "author": "Team Tecnico",
+        "tags": ["Tecnologia RF", "Innovazione", "Casa Intelligente"]
+      },
+      "article2": {
+        "title": "Scegliere l'Interruttore WiFi Giusto per la Tua Casa Intelligente",
+        "excerpt": "Una guida completa per selezionare e installare interruttori WiFi per un'automazione domestica ottimale.",
+        "date": "8 ottobre 2024",
+        "author": "Team Prodotto",
+        "tags": ["Interruttore WiFi", "Casa Intelligente", "Installazione"]
+      },
+      "article3": {
+        "title": "Aftermarket Telecomando Auto: Vantaggi e Considerazioni",
+        "excerpt": "Comprendere i vantaggi dei telecomandi aftermarket per auto e come scegliere la soluzione giusta.",
+        "date": "1 ottobre 2024",
+        "author": "Team Automobilistico",
+        "tags": ["Telecomando Auto", "Aftermarket", "Sicurezza"]
+      },
+      "subscribe": {
+        "title": "Rimani Aggiornato",
+        "description": "Iscriviti alla nostra newsletter per gli ultimi approfondimenti tecnici e aggiornamenti sui prodotti.",
+        "placeholder": "Inserisci la tua email",
+        "button": "Iscriviti"
+      }
+    },
+    "contact": {
+      "title": "Contattaci",
+      "subtitle": "Contatta il nostro team per richieste e supporto",
+      "form": {
+        "name": "Nome",
+        "email": "Email",
+        "message": "Messaggio",
+        "language": "Lingua Preferita",
+        "submit": "Invia Messaggio",
+        "success": "Grazie per il tuo messaggio! Ti risponderemo presto."
+      },
+      "info": {
+        "title": "Informazioni di Contatto",
+        "email": "Email",
+        "phone": "Telefono/WhatsApp",
+        "address": "Indirizzo"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 FastFun Remote Control. Tutti i diritti riservati.",
+      "privacy": "Privacy Policy",
+      "terms": "Termini di Servizio"
+    }
+  }
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="contact.title">Contact Us - FastFun Remote Control</title>
+    <meta name="description" content="Get in touch with FastFun Remote Control for RF remotes, WiFi switches, and car remote solutions. Contact our team for inquiries, support, and product quotes.">
+    <meta name="keywords" content="contact FastFun Remote Control, RF remote control support, WiFi switch inquiry, car remote aftermarket, technical support, product quote">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" data-i18n="contact.title" content="Contact Us - FastFun Remote Control">
+    <meta property="og:description" content="Get in touch with FastFun Remote Control for RF remotes, WiFi switches, and car remote solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastfunrc.com/contact.html">
+    <meta property="og:image" content="https://fastfunrc.com/images/contact-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-i18n="contact.title" content="Contact Us - FastFun Remote Control">
+    <meta name="twitter:description" content="Get in touch with FastFun Remote Control for RF remotes, WiFi switches, and car remote solutions.">
+    <meta name="twitter:image" content="https://fastfunrc.com/images/contact-og.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Us - FastFun Remote Control",
+        "description": "Get in touch with FastFun Remote Control for RF remotes, WiFi switches, and car remote solutions.",
+        "url": "https://fastfunrc.com/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "FastFun Remote Control",
+            "url": "https://fastfunrc.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+86 158 9964 8898",
+                "contactType": "customer service",
+                "availableLanguage": ["English", "Spanish", "Portuguese", "French", "Italian"],
+                "email": "eric@fastfunrc.com"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8th Floor, Building 1, Huwei Kegu",
+                "addressLocality": "Dalingshan Town",
+                "addressRegion": "Dongguan City",
+                "addressCountry": "China"
+            }
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://fastfunrc.com/contact.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#007AFF"/>
+                    <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="16" cy="16" r="3" fill="white"/>
+                </svg>
+                FastFun RC
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="products.html" class="nav-link" data-i18n="nav.products">Products</a></li>
+                <li><a href="blog.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="contact.html" class="nav-link active" data-i18n="nav.contact">Contact</a></li>
+                <li>
+                    <div class="language-selector">
+                        <button class="language-dropdown" id="languageDropdown">
+                            <span id="currentLanguage">EN</span>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="language-menu" id="languageMenu">
+                            <a href="#" class="language-option active" data-lang="en">English</a>
+                            <a href="#" class="language-option" data-lang="es">Español</a>
+                            <a href="#" class="language-option" data-lang="pt">Português</a>
+                            <a href="#" class="language-option" data-lang="fr">Français</a>
+                            <a href="#" class="language-option" data-lang="it">Italiano</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-fade-in-up">
+                <h1 class="hero-title" data-i18n="contact.title">Contact Us</h1>
+                <p class="hero-subtitle" data-i18n="contact.subtitle">Get in touch with our team for inquiries and support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <!-- Contact Form -->
+                <div class="animate-fade-in-up">
+                    <div class="contact-form">
+                        <h2 data-i18n="contact.form.title">Send Us a Message</h2>
+                        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                            <div class="form-group">
+                                <label for="name" class="form-label" data-i18n="contact.form.name">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label" data-i18n="contact.form.email">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="language" class="form-label" data-i18n="contact.form.language">Preferred Language</label>
+                                <select id="language" name="language" class="form-select">
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="pt">Português</option>
+                                    <option value="fr">Français</option>
+                                    <option value="it">Italiano</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="product" class="form-label">Product Interest</label>
+                                <select id="product" name="product" class="form-select">
+                                    <option value="">Select a product</option>
+                                    <option value="rf-remote" data-i18n="products.rfRemote.title">RF Remote</option>
+                                    <option value="rf-controller" data-i18n="products.rfController.title">RF Controller</option>
+                                    <option value="rf-kit" data-i18n="products.rfKit.title">RF Kit</option>
+                                    <option value="wifi-switch" data-i18n="products.wifiSwitch.title">WiFi Switch</option>
+                                    <option value="car-remote" data-i18n="products.carRemote.title">Car Remote</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label" data-i18n="contact.form.message">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large" data-i18n="contact.form.submit">Send Message</button>
+                        </form>
+                        <div id="formMessage" class="form-message" style="margin-top: 1rem; display: none;"></div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="animate-fade-in-up">
+                    <div class="contact-info">
+                        <h2 data-i18n="contact.info.title">Contact Information</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 data-i18n="contact.info.email">Email</h3>
+                                <p><a href="mailto:eric@fastfunrc.com">eric@fastfunrc.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 data-i18n="contact.info.phone">Phone/WhatsApp</h3>
+                                <p><a href="tel:+8615899648898">+86 158 9964 8898</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 data-i18n="contact.info.address">Address</h3>
+                                <p>8th Floor, Building 1, Huwei Kegu<br>
+                                Dalingshan Town, Dongguan City<br>
+                                Guangdong Province, China</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 9:00 AM - 12:00 PM<br>
+                                Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Find Us</h2>
+                <p>Visit our headquarters in Dongguan, China</p>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.1234567890123!2d113.71234567890123!3d23.04567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAyJzQ0LjQiTiAxM8KwNDInNDguNCJF!5e0!3m2!1sen!2sus!4v1234567890123"
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: var(--radius-lg);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="FastFun Remote Control Location">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="features section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card animate-fade-in-up">
+                    <h3>What is your typical lead time for orders?</h3>
+                    <p>Standard orders typically ship within 7-10 business days. Custom orders may require 2-4 weeks depending on specifications and quantity.</p>
+                </div>
+                <div class="card animate-fade-in-up">
+                    <h3>Do you offer technical support?</h3>
+                    <p>Yes, we provide comprehensive technical support for all our products, including installation guidance and troubleshooting assistance.</p>
+                </div>
+                <div class="card animate-fade-in-up">
+                    <h3>Can I request custom product specifications?</h3>
+                    <p>Absolutely! We specialize in custom solutions and can modify our products to meet your specific requirements.</p>
+                </div>
+                <div class="card animate-fade-in-up">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>We accept wire transfers, PayPal, and major credit cards. Payment terms can be discussed for bulk orders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Ready to Get Started?</h2>
+                <p>Join thousands of satisfied customers worldwide who trust FastFun Remote Control</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="btn btn-primary btn-large">Browse Products</a>
+                    <a href="mailto:eric@fastfunrc.com" class="btn btn-outline btn-large">Email Us Directly</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FastFun Remote Control</h3>
+                    <p>Leading manufacturer of RF remotes, controllers, WiFi switches, and car remote aftermarket solutions since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html#rf-remote" data-i18n="products.rfRemote.title">RF Remote</a></li>
+                        <li><a href="products.html#rf-controller" data-i18n="products.rfController.title">RF Controller</a></li>
+                        <li><a href="products.html#rf-kit" data-i18n="products.rfKit.title">RF Kit</a></li>
+                        <li><a href="products.html#wifi-switch" data-i18n="products.wifiSwitch.title">WiFi Switch</a></li>
+                        <li><a href="products.html#car-remote" data-i18n="products.carRemote.title">Car Remote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: eric@fastfunrc.com</p>
+                    <p>Phone/WhatsApp: +86 158 9964 8898</p>
+                    <p>8th Floor, Building 1, Huwei Kegu<br>Dalingshan Town, Dongguan City<br>Guangdong Province, China</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">© 2024 FastFun Remote Control. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Analytics Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
