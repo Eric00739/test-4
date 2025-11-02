@@ -328,6 +328,15 @@ a:hover {
     gap: var(--spacing-sm);
 }
 
+a.btn,
+a.btn:visited {
+    color: inherit;
+}
+
+a.btn:hover {
+    color: inherit;
+}
+
 .btn-primary {
     background-color: var(--primary-blue);
     color: white;
@@ -336,8 +345,14 @@ a:hover {
 
 .btn-primary:hover {
     background-color: var(--primary-blue-hover);
+    color: white;
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid rgba(0, 122, 255, 0.35);
+    outline-offset: 3px;
 }
 
 .btn-secondary {
@@ -359,6 +374,11 @@ a:hover {
 .btn-outline:hover {
     background-color: var(--primary-blue);
     color: white;
+}
+
+.btn-outline:focus-visible {
+    outline: 3px solid rgba(0, 122, 255, 0.35);
+    outline-offset: 3px;
 }
 
 .btn-large {
@@ -979,6 +999,19 @@ tbody tr:last-child td {
 .product-card {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-white);
+    height: 100%;
+    gap: var(--spacing-lg);
+}
+
+.product-card .card-header {
+    flex-grow: 1;
+}
+
+.product-card .btn {
+    margin-top: auto;
 }
 
 .product-badge {
