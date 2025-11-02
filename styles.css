@@ -1340,6 +1340,17 @@ tbody tr:last-child td {
     padding: var(--spacing-3xl) 0 var(--spacing-xl);
 }
 
+.footer p,
+.footer li,
+.footer a {
+    color: white;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+    color: white;
+}
+
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1360,20 +1371,11 @@ tbody tr:last-child td {
     margin-bottom: var(--spacing-sm);
 }
 
-.footer-links a {
-    color: rgba(255, 255, 255, 0.8);
-    transition: color var(--transition-fast);
-}
-
-.footer-links a:hover {
-    color: white;
-}
-
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: var(--spacing-lg);
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+    color: white;
 }
 
 /* Newsletter */
