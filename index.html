@@ -87,16 +87,298 @@
     }
     </script>
     
-    <link rel="stylesheet" href="styles.css">
+    <!-- Critical CSS inline for performance -->
+    <style>
+/* Critical CSS for FastFun RC - Above the fold content */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Core color palette */
+    --primary-blue: #007AFF;
+    --primary-blue-hover: #0056CC;
+    --background-white: #FFFFFF;
+    --text-primary: #000000;
+    --text-secondary: #3C3C43;
+    --border-light: rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08);
+    
+    /* Core spacing */
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Core typography */
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Core transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base HTML and Body */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-system);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation - Critical for user interaction */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.5rem var(--spacing-md);
+    border-radius: 12px;
+    transition: all var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-blue);
+    background-color: rgba(0, 122, 255, 0.1);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    position: relative;
+    transition: all var(--transition-fast);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Hero Section - Critical above-the-fold content */
+.hero {
+    padding: calc(70px + 3rem) 0 3rem;
+    background: linear-gradient(135deg, var(--background-white) 0%, rgba(0, 122, 255, 0.05) 100%);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons - Critical for user interaction */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    gap: 0.5rem;
+}
+
+a.btn,
+a.btn:visited {
+    color: inherit;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: var(--shadow-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-blue-hover);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-large {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--background-white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: var(--spacing-xl);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+        z-index: 1001;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+
+    .btn-large {
+        width: 100%;
+        max-width: 280px;
+        min-height: 44px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+    </style>
+    
+    <!-- Non-critical CSS deferred loading -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="canonical" href="https://fastfunrc.com">
     
     <!-- Hreflang links for multi-language SEO -->
     <link rel="alternate" hreflang="en" href="https://fastfunrc.com/">
-    <link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/">
-    <link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/">
-    <link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/">
-    <link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/">
+    <link rel="alternate" hreflang="es" href="https://fastfunrc.com/">
+    <link rel="alternate" hreflang="pt" href="https://fastfunrc.com/">
+    <link rel="alternate" hreflang="fr" href="https://fastfunrc.com/">
+    <link rel="alternate" hreflang="it" href="https://fastfunrc.com/">
     <link rel="alternate" hreflang="x-default" href="https://fastfunrc.com/">
     
     <!-- Favicon -->
@@ -116,7 +398,7 @@
                 FastFun RC
             </a>
             
-            <ul class="nav-menu" id="navMenu">
+            <ul class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">
                 <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a></li>
                 <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
                 <li><a href="products.html" class="nav-link" data-i18n="nav.products">Products</a></li>
@@ -141,7 +423,7 @@
                 </li>
             </ul>
             
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-controls="navMenu" aria-expanded="false">
                 <div class="hamburger"></div>
             </button>
         </div>
@@ -151,28 +433,28 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content animate-fade-in-up">
-                <h1 class="hero-title">Industry-Leading RF Remote Control Solutions Since 2010</h1>
-                <p class="hero-subtitle">Trusted by 50,000+ Professionals Worldwide | ISO 9001:2015 Certified | 80% Brand Compatibility</p>
+                <h1 class="hero-title" data-i18n="home.heroTitle">Industry-Leading RF Remote Control Solutions Since 2010</h1>
+                <p class="hero-subtitle" data-i18n="home.heroSubtitle">Trusted by 50,000+ Professionals Worldwide | ISO 9001:2015 Certified | 80% Brand Compatibility</p>
                 <div class="hero-buttons">
-                    <a href="https://wa.me/8615899648898?text=Interested in RF remote solutions - FastFun RC" class="btn btn-primary btn-large hero-cta-primary">Get Expert Consultation</a>
-                    <a href="products.html" class="btn btn-outline btn-large hero-cta-secondary">View Product Catalog</a>
+                    <a href="https://wa.me/8615899648898?text=Interested in RF remote solutions - FastFun RC" class="btn btn-primary btn-large hero-cta-primary" data-i18n="home.heroCtaPrimary">Get Expert Consultation</a>
+                    <a href="products.html" class="btn btn-outline btn-large hero-cta-secondary" data-i18n="home.heroCtaSecondary">View Product Catalog</a>
                 </div>
                 <div class="hero-trust-bar" role="list" aria-label="FastFun RC performance highlights">
                     <div class="trust-item" role="listitem">
                         <span class="trust-value">99.7%</span>
-                        <span class="trust-label">On-time global deliveries</span>
+                        <span class="trust-label" data-i18n="home.trust.deliveries">On-time global deliveries</span>
                     </div>
                     <div class="trust-item" role="listitem">
                         <span class="trust-value">50+</span>
-                        <span class="trust-label">Countries with active partners</span>
+                        <span class="trust-label" data-i18n="home.trust.countries">Countries with active partners</span>
                     </div>
                     <div class="trust-item" role="listitem">
                         <span class="trust-value">24h</span>
-                        <span class="trust-label">Average quotation turnaround</span>
+                        <span class="trust-label" data-i18n="home.trust.turnaround">Average quotation turnaround</span>
                     </div>
                     <div class="trust-item" role="listitem">
                         <span class="trust-value">4.9/5</span>
-                        <span class="trust-label">Customer satisfaction score</span>
+                        <span class="trust-label" data-i18n="home.trust.satisfaction">Customer satisfaction score</span>
                     </div>
                 </div>
             </div>
@@ -183,7 +465,7 @@
     <section class="features section">
         <div class="container">
             <div class="text-center">
-                <h2>Why Industry Leaders Choose FastFun RC</h2>
+                <h2 data-i18n="home.features.title">Why Industry Leaders Choose FastFun RC</h2>
             </div>
             <div class="grid grid-3">
                 <div class="feature-card">
@@ -193,12 +475,12 @@
                             <path d="M21 12V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H16"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">14+ Years of Manufacturing Excellence</h3>
+                    <h3 class="feature-title" data-i18n="home.features.manufacturing.title">14+ Years of Manufacturing Excellence</h3>
                     <ul class="feature-list">
-                        <li>ISO 9001:2015 certified manufacturing facility</li>
-                        <li>433/315MHz dual frequency technology</li>
-                        <li>80%+ compatibility with major brands</li>
-                        <li>Global CE/FCC certification</li>
+                        <li data-i18n="home.features.manufacturing.item1">ISO 9001:2015 certified manufacturing facility</li>
+                        <li data-i18n="home.features.manufacturing.item2">433/315MHz dual frequency technology</li>
+                        <li data-i18n="home.features.manufacturing.item3">80%+ compatibility with major brands</li>
+                        <li data-i18n="home.features.manufacturing.item4">Global CE/FCC certification</li>
                     </ul>
                 </div>
                 <div class="feature-card">
@@ -207,12 +489,12 @@
                             <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">Advanced RF Technology</h3>
+                    <h3 class="feature-title" data-i18n="home.features.technology.title">Advanced RF Technology</h3>
                     <ul class="feature-list">
-                        <li>Patented rolling code encryption</li>
-                        <li>Extended 150m+ transmission range</li>
-                        <li>Smart home Wi-Fi integration</li>
-                        <li>Ultra-low power consumption</li>
+                        <li data-i18n="home.features.technology.item1">Patented rolling code encryption</li>
+                        <li data-i18n="home.features.technology.item2">Extended 150m+ transmission range</li>
+                        <li data-i18n="home.features.technology.item3">Smart home Wi-Fi integration</li>
+                        <li data-i18n="home.features.technology.item4">Ultra-low power consumption</li>
                     </ul>
                 </div>
                 <div class="feature-card">
@@ -222,12 +504,12 @@
                             <path d="M12 7V12L14.5 14.5"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">Global Expert Support</h3>
+                    <h3 class="feature-title" data-i18n="home.features.support.title">Global Expert Support</h3>
                     <ul class="feature-list">
-                        <li>24/7 multilingual technical support</li>
-                        <li>Custom OEM/ODM programming services</li>
-                        <li>Extended 3-year warranty</li>
-                        <li>Worldwide shipping to 50+ countries</li>
+                        <li data-i18n="home.features.support.item1">24/7 multilingual technical support</li>
+                        <li data-i18n="home.features.support.item2">Custom OEM/ODM programming services</li>
+                        <li data-i18n="home.features.support.item3">Extended 3-year warranty</li>
+                        <li data-i18n="home.features.support.item4">Worldwide shipping to 50+ countries</li>
                     </ul>
                 </div>
             </div>
@@ -238,54 +520,54 @@
     <section class="customer-success section">
         <div class="container">
             <div class="section-heading text-center">
-                <span class="eyebrow-tag">Customer Outcomes</span>
-                <h2>Designed to convert more service calls into lifelong clients</h2>
-                <p>Streamlined onboarding, transparent pricing, and proactive support give your teams confidence before, during, and after deployment.</p>
+                <span class="eyebrow-tag" data-i18n="home.customerSuccess.eyebrow">Customer Outcomes</span>
+                <h2 data-i18n="home.customerSuccess.title">Designed to convert more service calls into lifelong clients</h2>
+                <p data-i18n="home.customerSuccess.subtitle">Streamlined onboarding, transparent pricing, and proactive support give your teams confidence before, during, and after deployment.</p>
             </div>
             <div class="customer-success-layout">
                 <div class="journey-card">
-                    <h3>Fast-Track Implementation Journey</h3>
+                    <h3 data-i18n="home.customerSuccess.journey.title">Fast-Track Implementation Journey</h3>
                     <ol class="journey-steps">
                         <li>
-                            <span class="step-title">Discovery & RF compatibility audit</span>
-                            <span class="step-copy">30-minute technical call to map installed brands, signal ranges, and custom needs.</span>
+                            <span class="step-title" data-i18n="home.customerSuccess.journey.step1.title">Discovery & RF compatibility audit</span>
+                            <span class="step-copy" data-i18n="home.customerSuccess.journey.step1.desc">30-minute technical call to map installed brands, signal ranges, and custom needs.</span>
                         </li>
                         <li>
-                            <span class="step-title">Prototype & programming window</span>
-                            <span class="step-copy">Receive tailored firmware profiles within 72 hours for field testing.</span>
+                            <span class="step-title" data-i18n="home.customerSuccess.journey.step2.title">Prototype & programming window</span>
+                            <span class="step-copy" data-i18n="home.customerSuccess.journey.step2.desc">Receive tailored firmware profiles within 72 hours for field testing.</span>
                         </li>
                         <li>
-                            <span class="step-title">Pilot deployment playbook</span>
-                            <span class="step-copy">Training assets and multilingual scripts keep installers consistent.</span>
+                            <span class="step-title" data-i18n="home.customerSuccess.journey.step3.title">Pilot deployment playbook</span>
+                            <span class="step-copy" data-i18n="home.customerSuccess.journey.step3.desc">Training assets and multilingual scripts keep installers consistent.</span>
                         </li>
                         <li>
-                            <span class="step-title">Global fulfillment & escalation</span>
-                            <span class="step-copy">Dedicated account manager monitors SLAs and proactively reports inventory status.</span>
+                            <span class="step-title" data-i18n="home.customerSuccess.journey.step4.title">Global fulfillment & escalation</span>
+                            <span class="step-copy" data-i18n="home.customerSuccess.journey.step4.desc">Dedicated account manager monitors SLAs and proactively reports inventory status.</span>
                         </li>
                     </ol>
                 </div>
                 <div class="impact-grid">
                     <div class="impact-card">
                         <span class="impact-value">35%</span>
-                        <span class="impact-caption">Average reduction in service truck rolls after 90 days</span>
+                        <span class="impact-caption" data-i18n="home.customerSuccess.impact.reduction">Average reduction in service truck rolls after 90 days</span>
                     </div>
                     <div class="impact-card">
                         <span class="impact-value">3.2x</span>
-                        <span class="impact-caption">Increase in attach-rate of value-added maintenance contracts</span>
+                        <span class="impact-caption" data-i18n="home.customerSuccess.impact.increase">Increase in attach-rate of value-added maintenance contracts</span>
                     </div>
                     <div class="impact-card">
                         <span class="impact-value">48h</span>
-                        <span class="impact-caption">Standard lead time for repeat orders with predictive restock alerts</span>
+                        <span class="impact-caption" data-i18n="home.customerSuccess.impact.leadtime">Standard lead time for repeat orders with predictive restock alerts</span>
                     </div>
                 </div>
                 <div class="customer-assurance">
-                    <h3>Built for sales, operations, and customer success</h3>
+                    <h3 data-i18n="home.customerSuccess.assurance.title">Built for sales, operations, and customer success</h3>
                     <ul class="assurance-list">
-                        <li><strong>Sales teams:</strong> ready-to-send ROI calculators and multilingual brochures.</li>
-                        <li><strong>Operations:</strong> serialized QA reports and drop-in packaging templates for franchise networks.</li>
-                        <li><strong>Support:</strong> direct Slack/WeChat war room during product launches and firmware updates.</li>
+                        <li><strong>Sales teams:</strong> <span data-i18n="home.customerSuccess.assurance.sales">ready-to-send ROI calculators and multilingual brochures.</span></li>
+                        <li><strong>Operations:</strong> <span data-i18n="home.customerSuccess.assurance.operations">serialized QA reports and drop-in packaging templates for franchise networks.</span></li>
+                        <li><strong>Support:</strong> <span data-i18n="home.customerSuccess.assurance.support">direct Slack/WeChat war room during product launches and firmware updates.</span></li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary btn-inline">Schedule a customer experience demo</a>
+                    <a href="contact.html" class="btn btn-primary btn-inline" data-i18n="home.customerSuccess.assurance.cta">Schedule a customer experience demo</a>
                 </div>
             </div>
         </div>
@@ -295,34 +577,34 @@
     <section class="section">
         <div class="container">
             <div class="text-center">
-                <h2>Trusted by 50,000+ Industry Professionals</h2>
-                <p>Discover why leading garage door installers and smart home integrators worldwide rely on FastFun RC</p>
+                <h2 data-i18n="home.testimonials.title">Trusted by 50,000+ Industry Professionals</h2>
+                <p data-i18n="home.testimonials.subtitle">Discover why leading garage door installers and smart home integrators worldwide rely on FastFun RC</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"FastFun RC's universal compatibility has reduced our inventory by 60% while increasing installation efficiency by 300%. Their technical support is unmatched."</p>
+                        <p data-i18n="home.testimonials.testimonial1.text">"FastFun RC's universal compatibility has reduced our inventory by 60% while increasing installation efficiency by 300%. Their technical support is unmatched."</p>
                         <div class="testimonial-author">
-                            <strong>John Martinez</strong>
-                            <span>Certified Garage Door Technician, USA</span>
+                            <strong data-i18n="home.testimonials.testimonial1.author">John Martinez</strong>
+                            <span data-i18n="home.testimonials.testimonial1.role">Certified Garage Door Technician, USA</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"The rolling code technology and dual-frequency support eliminated all compatibility issues. FastFun RC delivered exactly what our enterprise clients needed."</p>
+                        <p data-i18n="home.testimonials.testimonial2.text">"The rolling code technology and dual-frequency support eliminated all compatibility issues. FastFun RC delivered exactly what our enterprise clients needed."</p>
                         <div class="testimonial-author">
-                            <strong>Sarah Chen</strong>
-                            <span>Smart Home Integration Specialist, Singapore</span>
+                            <strong data-i18n="home.testimonials.testimonial2.author">Sarah Chen</strong>
+                            <span data-i18n="home.testimonials.testimonial2.role">Smart Home Integration Specialist, Singapore</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"As Europe's largest property management company, we require zero-failure solutions. FastFun RC's 99.8% reliability rate and 24/7 support made them our exclusive partner."</p>
+                        <p data-i18n="home.testimonials.testimonial3.text">"As Europe's largest property management company, we require zero-failure solutions. FastFun RC's 99.8% reliability rate and 24/7 support made them our exclusive partner."</p>
                         <div class="testimonial-author">
-                            <strong>Mikhail Petrov</strong>
-                            <span>Director of Security Systems, European Properties Ltd.</span>
+                            <strong data-i18n="home.testimonials.testimonial3.author">Mikhail Petrov</strong>
+                            <span data-i18n="home.testimonials.testimonial3.role">Director of Security Systems, European Properties Ltd.</span>
                         </div>
                     </div>
                 </div>
@@ -334,7 +616,7 @@
                         <circle cx="8.5" cy="8.5" r="1.5"/>
                         <polyline points="21 15 16 10 5 21"/>
                     </svg>
-                    <span>ISO 9001</span>
+                    <span data-i18n="home.certifications.iso">ISO 9001</span>
                 </div>
                 <div class="certification-item">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
@@ -342,14 +624,14 @@
                         <path d="M2 17L12 22L22 17"/>
                         <path d="M2 12L12 17L22 12"/>
                     </svg>
-                    <span>CE Certified</span>
+                    <span data-i18n="home.certifications.ce">CE Certified</span>
                 </div>
                 <div class="certification-item">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M12 6v6l4 2"/>
                     </svg>
-                    <span>FCC Approved</span>
+                    <span data-i18n="home.certifications.fcc">FCC Approved</span>
                 </div>
             </div>
         </div>
@@ -454,31 +736,31 @@
     <section class="section faq-section" id="faq">
         <div class="container">
             <div class="section-heading text-center">
-                <span class="eyebrow-tag">Answers for decision makers</span>
-                <h2>Frequently asked before partnering with FastFun RC</h2>
-                <p>Clear policies on lead times, certifications, integrations, and support so you can move forward with confidence.</p>
+                <span class="eyebrow-tag" data-i18n="home.faq.eyebrow">Answers for decision makers</span>
+                <h2 data-i18n="home.faq.title">Frequently asked before partnering with FastFun RC</h2>
+                <p data-i18n="home.faq.subtitle">Clear policies on lead times, certifications, integrations, and support so you can move forward with confidence.</p>
             </div>
             <div class="faq-grid">
                 <details class="faq-item" open>
-                    <summary>How fast can we receive custom-programmed remotes?</summary>
-                    <p>Standard production orders ship within 7 business days. For OEM profiles, we provide firmware samples in 72 hours and maintain reserved production slots for priority accounts.</p>
+                    <summary data-i18n="home.faq.q1.question">How fast can we receive custom-programmed remotes?</summary>
+                    <p data-i18n="home.faq.q1.answer">Standard production orders ship within 7 business days. For OEM profiles, we provide firmware samples in 72 hours and maintain reserved production slots for priority accounts.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Do you support multilingual packaging and documentation?</summary>
-                    <p>Yes. Our creative team localizes manuals, QR onboarding flows, and packaging layouts in 12 languages, ensuring compliance with regional regulations and franchise brand books.</p>
+                    <summary data-i18n="home.faq.q2.question">Do you support multilingual packaging and documentation?</summary>
+                    <p data-i18n="home.faq.q2.answer">Yes. Our creative team localizes manuals, QR onboarding flows, and packaging layouts in 12 languages, ensuring compliance with regional regulations and franchise brand books.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Which certifications and testing reports are included?</summary>
-                    <p>Every batch ships with CE, FCC, and RoHS certificates plus signal stability and temperature stress reports. We can add UL or customized testing on request.</p>
+                    <summary data-i18n="home.faq.q3.question">Which certifications and testing reports are included?</summary>
+                    <p data-i18n="home.faq.q3.answer">Every batch ships with CE, FCC, and RoHS certificates plus signal stability and temperature stress reports. We can add UL or customized testing on request.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>How do FastFun RC products integrate with smart home ecosystems?</summary>
-                    <p>Our WiFi and RF modules connect with HomeKit, Google Home, and Alexa via secure APIs. For industrial clients, we offer MQTT and Modbus gateways with dedicated solution engineers.</p>
+                    <summary data-i18n="home.faq.q4.question">How do FastFun RC products integrate with smart home ecosystems?</summary>
+                    <p data-i18n="home.faq.q4.answer">Our WiFi and RF modules connect with HomeKit, Google Home, and Alexa via secure APIs. For industrial clients, we offer MQTT and Modbus gateways with dedicated solution engineers.</p>
                 </details>
             </div>
             <div class="faq-cta">
-                <p>Still evaluating? Share your project brief and we'll send a tailored RF compatibility roadmap within one business day.</p>
-                <a href="contact.html" class="btn btn-outline">Send project requirements</a>
+                <p data-i18n="home.faqCta.text">Still evaluating? Share your project brief and we'll send a tailored RF compatibility roadmap within one business day.</p>
+                <a href="contact.html" class="btn btn-outline" data-i18n="home.faqCta.button">Send project requirements</a>
             </div>
         </div>
     </section>
@@ -487,15 +769,15 @@
     <section class="container">
         <div class="newsletter">
             <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to our newsletter for the latest technical insights and product updates. GDPR compliant - unsubscribe anytime.</p>
+                <h2 data-i18n="home.newsletter.title">Stay Updated</h2>
+                <p data-i18n="home.newsletter.description">Subscribe to our newsletter for the latest technical insights and product updates. GDPR compliant - unsubscribe anytime.</p>
                 <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                    <button type="button" class="btn btn-outline" onclick="window.open('/products.pdf')">Download catalog</button>
+                    <input type="email" class="newsletter-input" data-i18n-placeholder="home.newsletter.placeholder" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary" data-i18n="home.newsletter.button">Subscribe</button>
+                    <button type="button" class="btn btn-outline" onclick="window.open('#')" data-i18n="home.newsletter.downloadCatalog">Download catalog</button>
                 </form>
                 <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.8;">
-                    By subscribing, you agree to our <a href="#" style="color: white; text-decoration: underline;">Privacy Policy</a> and <a href="#" style="color: white; text-decoration: underline;">Terms of Service</a>
+                    By subscribing, you agree to our <a href="#" style="color: white; text-decoration: underline;" data-i18n="home.newsletter.privacy">Privacy Policy</a> and <a href="#" style="color: white; text-decoration: underline;" data-i18n="home.newsletter.terms">Terms of Service</a>
                 </p>
             </div>
         </div>

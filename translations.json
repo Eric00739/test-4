@@ -14,27 +14,163 @@
       "getQuote": "Get Quote"
     },
     "home": {
-      "heroTitle": "Innovative Remote Control Solutions",
-      "heroSubtitle": "Professional RF Remotes, WiFi Switches & Car Remote Aftermarket Solutions",
-      "heroCta": "Explore Products",
+      "heroTitle": "Industry-Leading RF Remote Control Solutions Since 2010",
+      "heroSubtitle": "Trusted by 50,000+ Professionals Worldwide | ISO 9001:2015 Certified | 80% Brand Compatibility",
+      "heroCtaPrimary": "Get Expert Consultation",
+      "heroCtaSecondary": "View Product Catalog",
       "features": {
-        "title": "Why Choose FastFun",
-        "quality": {
-          "title": "Premium Quality",
-          "description": "ISO certified manufacturing with rigorous quality control"
+        "title": "Why Industry Leaders Choose FastFun RC",
+        "manufacturing": {
+          "title": "14+ Years of Manufacturing Excellence",
+          "item1": "ISO 9001:2015 certified manufacturing facility",
+          "item2": "433/315MHz dual frequency technology",
+          "item3": "80%+ compatibility with major brands",
+          "item4": "Global CE/FCC certification"
         },
-        "innovation": {
-          "title": "Cutting-Edge Technology",
-          "description": "Latest RF and WiFi technology for reliable performance"
+        "technology": {
+          "title": "Advanced RF Technology",
+          "item1": "Patented rolling code encryption",
+          "item2": "Extended 150m+ transmission range",
+          "item3": "Smart home Wi-Fi integration",
+          "item4": "Ultra-low power consumption"
         },
         "support": {
-          "title": "Expert Support",
-          "description": "Professional technical support and customization services"
+          "title": "Global Expert Support",
+          "item1": "24/7 multilingual technical support",
+          "item2": "Custom OEM/ODM programming services",
+          "item3": "Extended 3-year warranty",
+          "item4": "Worldwide shipping to 50+ countries"
         }
       },
+      "trust": {
+        "deliveries": "On-time global deliveries",
+        "countries": "Countries with active partners",
+        "turnaround": "Average quotation turnaround",
+        "satisfaction": "Customer satisfaction score"
+      },
+      "customerSuccess": {
+        "eyebrow": "Customer Outcomes",
+        "title": "Designed to convert more service calls into lifelong clients",
+        "subtitle": "Streamlined onboarding, transparent pricing, and proactive support give your teams confidence before, during, and after deployment.",
+        "journey": {
+          "title": "Fast-Track Implementation Journey",
+          "step1": {
+            "title": "Discovery & RF compatibility audit",
+            "desc": "30-minute technical call to map installed brands, signal ranges, and custom needs."
+          },
+          "step2": {
+            "title": "Prototype & programming window",
+            "desc": "Receive tailored firmware profiles within 72 hours for field testing."
+          },
+          "step3": {
+            "title": "Pilot deployment playbook",
+            "desc": "Training assets and multilingual scripts keep installers consistent."
+          },
+          "step4": {
+            "title": "Global fulfillment & escalation",
+            "desc": "Dedicated account manager monitors SLAs and proactively reports inventory status."
+          }
+        },
+        "impact": {
+          "reduction": "Average reduction in service truck rolls after 90 days",
+          "increase": "Increase in attach-rate of value-added maintenance contracts",
+          "leadtime": "Standard lead time for repeat orders with predictive restock alerts"
+        },
+        "assurance": {
+          "title": "Built for sales, operations, and customer success",
+          "sales": "ready-to-send ROI calculators and multilingual brochures.",
+          "operations": "serialized QA reports and drop-in packaging templates for franchise networks.",
+          "support": "direct Slack/WeChat war room during product launches and firmware updates."
+        },
+        "cta": "Schedule a customer experience demo"
+      },
+      "testimonials": {
+        "title": "Trusted by 50,000+ Industry Professionals",
+        "subtitle": "Discover why leading garage door installers and smart home integrators worldwide rely on FastFun RC",
+        "testimonial1": {
+          "text": "FastFun RC's universal compatibility has reduced our inventory by 60% while increasing installation efficiency by 300%. Their technical support is unmatched.",
+          "author": "John Martinez",
+          "role": "Certified Garage Door Technician, USA"
+        },
+        "testimonial2": {
+          "text": "The rolling code technology and dual-frequency support eliminated all compatibility issues. FastFun RC delivered exactly what our enterprise clients needed.",
+          "author": "Sarah Chen",
+          "role": "Smart Home Integration Specialist, Singapore"
+        },
+        "testimonial3": {
+          "text": "As Europe's largest property management company, we require zero-failure solutions. FastFun RC's 99.8% reliability rate and 24/7 support made them our exclusive partner.",
+          "author": "Mikhail Petrov",
+          "role": "Director of Security Systems, European Properties Ltd."
+        }
+      },
+      "certifications": {
+        "iso": "ISO 9001",
+        "ce": "CE Certified",
+        "fcc": "FCC Approved"
+      },
       "productsPreview": {
-        "title": "Our Product Range",
-        "subtitle": "Comprehensive remote control solutions for every need"
+        "title": "Professional Product Portfolio",
+        "subtitle": "Industry-leading RF control solutions with verified compatibility and performance metrics",
+        "rfRemote": {
+          "title": "Universal RF Remote",
+          "description": "433/315MHz dual frequency with 80%+ brand compatibility"
+        },
+        "rfController": {
+          "title": "RF Controller",
+          "description": "Advanced multi-device control with enterprise-grade encryption"
+        },
+        "rfKit": {
+          "title": "Complete RF Kit",
+          "description": "Professional installation kit with enterprise support"
+        },
+        "wifiSwitch": {
+          "title": "WiFi Smart Switch",
+          "description": "Enterprise-grade smart home integration platform"
+        }
+      },
+      "comparison": {
+        "title": "Technical Specifications Comparison",
+        "headers": {
+          "product": "Product",
+          "frequency": "Frequency",
+          "range": "Range",
+          "compatibility": "Compatibility",
+          "price": "Price"
+        }
+      },
+      "faq": {
+        "eyebrow": "Answers for decision makers",
+        "title": "Frequently asked before partnering with FastFun RC",
+        "subtitle": "Clear policies on lead times, certifications, integrations, and support so you can move forward with confidence.",
+        "q1": {
+          "question": "How fast can we receive custom-programmed remotes?",
+          "answer": "Standard production orders ship within 7 business days. For OEM profiles, we provide firmware samples in 72 hours and maintain reserved production slots for priority accounts."
+        },
+        "q2": {
+          "question": "Do you support multilingual packaging and documentation?",
+          "answer": "Yes. Our creative team localizes manuals, QR onboarding flows, and packaging layouts in 12 languages, ensuring compliance with regional regulations and franchise brand books."
+        },
+        "q3": {
+          "question": "Which certifications and testing reports are included?",
+          "answer": "Every batch ships with CE, FCC, and RoHS certificates plus signal stability and temperature stress reports. We can add UL or customized testing on request."
+        },
+        "q4": {
+          "question": "How do FastFun RC products integrate with smart home ecosystems?",
+          "answer": "Our WiFi and RF modules connect with HomeKit, Google Home, and Alexa via secure APIs. For industrial clients, we offer MQTT and Modbus gateways with dedicated solution engineers."
+        }
+      },
+      "faqCta": {
+        "text": "Still evaluating? Share your project brief and we'll send a tailored RF compatibility roadmap within one business day.",
+        "button": "Send project requirements"
+      },
+      "newsletter": {
+        "title": "Stay Updated",
+        "description": "Subscribe to our newsletter for the latest technical insights and product updates. GDPR compliant - unsubscribe anytime.",
+        "placeholder": "Enter your email",
+        "button": "Subscribe",
+        "downloadCatalog": "Download catalog",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
       }
     },
     "about": {
@@ -126,7 +262,9 @@
         "message": "Message",
         "language": "Preferred Language",
         "submit": "Send Message",
-        "success": "Thank you for your message! We'll get back to you soon."
+        "sending": "Sending...",
+        "success": "Thank you for your message! We'll get back to you soon.",
+        "error": "Sorry, there was an error sending your message. Please try again later."
       },
       "info": {
         "title": "Contact Information",
@@ -256,7 +394,10 @@
         "title": "Mantente Actualizado",
         "description": "Suscríbete a nuestro boletín para las últimas perspectivas técnicas y actualizaciones de productos.",
         "placeholder": "Ingresa tu correo electrónico",
-        "button": "Suscribirse"
+        "button": "Suscribirse",
+        "subscribing": "Suscribiendo...",
+        "subscribed": "¡Suscrito!",
+        "error": "Error. Por favor intenta de nuevo."
       }
     },
     "contact": {
@@ -398,7 +539,10 @@
         "title": "Mantenha-se Atualizado",
         "description": "Assine nossa newsletter para os últimos insights técnicos e atualizações de produtos.",
         "placeholder": "Digite seu e-mail",
-        "button": "Assinar"
+        "button": "Assinar",
+        "subscribing": "Assinando...",
+        "subscribed": "Inscrito!",
+        "error": "Erro. Por favor tente novamente."
       }
     },
     "contact": {
@@ -540,7 +684,10 @@
         "title": "Restez Informé",
         "description": "Abonnez-vous à notre newsletter pour les derniers insights techniques et mises à jour de produits.",
         "placeholder": "Entrez votre email",
-        "button": "S'abonner"
+        "button": "S'abonner",
+        "subscribing": "Inscription...",
+        "subscribed": "Inscrit!",
+        "error": "Erreur. Veuillez réessayer."
       }
     },
     "contact": {
@@ -682,7 +829,10 @@
         "title": "Rimani Aggiornato",
         "description": "Iscriviti alla nostra newsletter per gli ultimi approfondimenti tecnici e aggiornamenti sui prodotti.",
         "placeholder": "Inserisci la tua email",
-        "button": "Iscriviti"
+        "button": "Iscriviti",
+        "subscribing": "Iscrizione...",
+        "subscribed": "Iscritto!",
+        "error": "Errore. Riprova più tardi."
       }
     },
     "contact": {

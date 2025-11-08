@@ -10,8 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Initialize Application
-function initializeApp() {
-    loadTranslations();
+async function initializeApp() {
+    // Show loading state
+    showLoadingState();
+    
+    // Load translations first
+    await loadTranslations();
+    
+    // Initialize other components
     initializeLanguageSelector();
     initializeMobileMenu();
     initializeNavbar();
@@ -19,30 +25,52 @@ function initializeApp() {
     initializeAnimations();
     initializeSmoothScrolling();
     
-    // Load saved language preference
+    // Load saved language preference after translations are loaded
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
     setLanguage(savedLanguage);
+    
+    // Hide loading state
+    hideLoadingState();
 }
 
 // Load translations from JSON file
 async function loadTranslations() {
     try {
         const response = await fetch('translations.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         translations = await response.json();
+        return true;
     } catch (error) {
         console.error('Error loading translations:', error);
+        // Fallback to English if translations fail to load
+        translations = {
+            en: {
+                site: { title: "FastFun Remote Control", description: "" },
+                nav: { home: "Home", about: "About", products: "Products", blog: "Blog", contact: "Contact" },
+                loading: { message: "Loading..." }
+            }
+        };
+        return false;
     }
 }
 
 // Language Management
 function setLanguage(lang) {
-    if (!translations[lang]) return;
+    if (!translations[lang]) {
+        console.warn(`Translation for language '${lang}' not found`);
+        return;
+    }
     
     currentLanguage = lang;
     localStorage.setItem('preferredLanguage', lang);
     
     // Update language display
-    document.getElementById('currentLanguage').textContent = lang.toUpperCase();
+    const currentLangElement = document.getElementById('currentLanguage');
+    if (currentLangElement) {
+        currentLangElement.textContent = lang.toUpperCase();
+    }
     
     // Update language option active states
     document.querySelectorAll('.language-option').forEach(option => {
@@ -166,7 +194,10 @@ function initializeMobileMenu() {
     if (!toggle || !menu) return;
     
     toggle.addEventListener('click', function() {
-        menu.classList.toggle('active');
+        const isActive = menu.classList.toggle('active');
+        
+        // Update ARIA attributes
+        toggle.setAttribute('aria-expanded', isActive);
         
         // Animate hamburger
         const hamburger = toggle.querySelector('.hamburger');
@@ -178,6 +209,7 @@ function initializeMobileMenu() {
         link.addEventListener('click', function() {
             menu.classList.remove('active');
             document.querySelector('.hamburger').classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
         });
     });
 }
@@ -220,11 +252,33 @@ function handleContactForm(e) {
     // Show loading state
     const submitButton = e.target.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
+    submitButton.textContent = translations[currentLanguage]?.contact?.form?.sending || 'Sending...';
     submitButton.disabled = true;
     
-    // Simulate form submission (replace with actual Formspree integration)
-    setTimeout(() => {
+    // Real form submission to a backend service
+    // Replace 'https://api.example.com/contact' with your actual backend endpoint
+    fetch('https://api.example.com/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            language: formData.get('language'),
+            product: formData.get('product'),
+            message: formData.get('message'),
+            _subject: 'Contact Form Submission from FastFun RC Website'
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
         // Show success message
         if (formMessage) {
             formMessage.textContent = translations[currentLanguage]?.contact?.form?.success || 'Thank you for your message! We\'ll get back to you soon.';
@@ -235,15 +289,35 @@ function handleContactForm(e) {
         // Reset form
         e.target.reset();
         
+        // Track conversion event
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submission', {
+                'event_category': 'contact',
+                'event_label': 'contact_form'
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Form submission error:', error);
+        // Show error message
+        if (formMessage) {
+            formMessage.textContent = translations[currentLanguage]?.contact?.form?.error || 'Sorry, there was an error sending your message. Please try again later.';
+            formMessage.className = 'form-message error';
+            formMessage.style.display = 'block';
+        }
+    })
+    .finally(() => {
         // Restore button
         submitButton.textContent = originalText;
         submitButton.disabled = false;
         
-        // Hide message after 5 seconds
+        // Hide message after 10 seconds
         setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
-    }, 1500);
+            if (formMessage) {
+                formMessage.style.display = 'none';
+            }
+        }, 10000);
+    });
 }
 
 function handleNewsletterForm(e) {
@@ -254,25 +328,60 @@ function handleNewsletterForm(e) {
     const originalText = button.textContent;
     
     // Show loading state
-    button.textContent = 'Subscribing...';
+    button.textContent = translations[currentLanguage]?.blog?.subscribe?.subscribing || 'Subscribing...';
     button.disabled = true;
     
-    // Simulate subscription (replace with actual newsletter service)
-    setTimeout(() => {
+    // Real newsletter subscription
+    // Replace 'https://api.example.com/newsletter' with your actual newsletter service endpoint
+    fetch('https://api.example.com/newsletter', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            email: email,
+            source: 'fastfunrc.com',
+            language: currentLanguage,
+            _subject: 'Newsletter Subscription from FastFun RC Website'
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
         // Show success message
-        button.textContent = 'Subscribed!';
+        button.textContent = translations[currentLanguage]?.blog?.subscribe?.subscribed || 'Subscribed!';
         button.classList.add('success');
         
         // Reset form
         e.target.reset();
         
-        // Restore button after 2 seconds
+        // Track conversion event
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submission', {
+                'event_category': 'newsletter',
+                'event_label': 'newsletter_signup'
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Newsletter subscription error:', error);
+        // Show error message
+        button.textContent = translations[currentLanguage]?.blog?.subscribe?.error || 'Error. Please try again.';
+        button.classList.add('error');
+    })
+    .finally(() => {
+        // Restore button after 3 seconds
         setTimeout(() => {
             button.textContent = originalText;
             button.disabled = false;
-            button.classList.remove('success');
-        }, 2000);
-    }, 1000);
+            button.classList.remove('success', 'error');
+        }, 3000);
+    });
 }
 
 // Animations
@@ -374,6 +483,31 @@ window.addEventListener('load', function() {
         console.log('Page load time:', loadTime + 'ms');
     }
 });
+
+// Loading state functions
+function showLoadingState() {
+    // Create loading overlay if it doesn't exist
+    if (!document.getElementById('loadingOverlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'loadingOverlay';
+        overlay.className = 'loading-overlay';
+        overlay.innerHTML = `
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading translations...</p>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+    }
+    document.getElementById('loadingOverlay').style.display = 'flex';
+}
+
+function hideLoadingState() {
+    const overlay = document.getElementById('loadingOverlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+}
 
 // Export functions for potential use in other scripts
 window.FastFunRC = {
