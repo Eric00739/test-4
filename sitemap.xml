@@ -50,6 +50,62 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Multi-language Contact Pages -->
+    <!-- Spanish Contact Page -->
+    <url>
+        <loc>https://fastfunrc.com/es/contact.html</loc>
+        <lastmod>2025-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastfunrc.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastfunrc.com/contact.html"/>
+    </url>
+    
+    <!-- Portuguese Contact Page -->
+    <url>
+        <loc>https://fastfunrc.com/pt/contact.html</loc>
+        <lastmod>2025-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastfunrc.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastfunrc.com/contact.html"/>
+    </url>
+    
+    <!-- French Contact Page -->
+    <url>
+        <loc>https://fastfunrc.com/fr/contact.html</loc>
+        <lastmod>2025-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastfunrc.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastfunrc.com/contact.html"/>
+    </url>
+    
+    <!-- Italian Contact Page -->
+    <url>
+        <loc>https://fastfunrc.com/it/contact.html</loc>
+        <lastmod>2025-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastfunrc.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://fastfunrc.com/contact.html"/>
+    </url>
     
     <!-- Additional SEO Pages -->
     <url>

@@ -551,7 +551,10 @@ function handleContactForm(e) {
         // Enhanced error handling with specific error types
         let errorMessage = translations[currentLanguage]?.contact?.form?.error || 'Sorry, there was an error sending your message. Please try again later.';
         
-        if (error.response) {
+        // Check if it's a Formspree-specific error
+        if (error.message && error.message.includes('formspree')) {
+            errorMessage = 'Form service temporarily unavailable. Please email us directly at eric@fastfunrc.com';
+        } else if (error.response) {
             // Handle HTTP errors
             switch (error.response.status) {
                 case 400:
