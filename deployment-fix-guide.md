@@ -40,6 +40,11 @@
 ✓ styles.css (样式文件)
 ✓ translations.json (翻译文件)
 ✓ debug-test.html (调试页面)
+✓ es/index.html (西班牙语页面)
+✓ pt/index.html (葡萄牙语页面)
+✓ fr/index.html (法语页面)
+✓ it/index.html (意大利语页面)
+✓ sitemap.xml (更新的站点地图)
 ```
 
 ### 第二步：服务器配置
