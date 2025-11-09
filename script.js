@@ -396,7 +396,21 @@ function initializeLanguageSelector() {
 
 function navigateToLanguageVersion(lang, currentPath) {
     // Extract the current page name without language prefix
-    const pageName = currentPath.replace(/^\/(es|pt|fr|it)\//, '').replace(/^\//, '');
+    let pageName = currentPath;
+    
+    // Remove language prefix if present
+    const langPrefixRegex = /^\/(es|pt|fr|it)\//;
+    if (langPrefixRegex.test(pageName)) {
+        pageName = pageName.replace(langPrefixRegex, '/');
+    }
+    
+    // Remove leading slash for consistency
+    pageName = pageName.replace(/^\//, '');
+    
+    // Handle root path case
+    if (pageName === '' || pageName === '/') {
+        pageName = 'index.html';
+    }
     
     // Build the new URL
     let newUrl;
@@ -407,6 +421,7 @@ function navigateToLanguageVersion(lang, currentPath) {
     }
     
     // Navigate to the new language version
+    console.log('Navigating to:', newUrl, 'from:', currentPath, 'language:', lang);
     window.location.href = newUrl;
 }
 

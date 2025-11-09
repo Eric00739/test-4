@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-language Debug - FastFun RC</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        .debug-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        .test-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #007AFF;
+        }
+        .test-result {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success { 
+            background: #d4edda; 
+            color: #155724; 
+            border: 1px solid #c3e6cb; 
+        }
+        .error { 
+            background: #f8d7da; 
+            color: #721c24; 
+            border: 1px solid #f5c6cb; 
+        }
+        .warning { 
+            background: #fff3cd; 
+            color: #856404; 
+            border: 1px solid #ffeaa7; 
+        }
+        .info { 
+            background: #d1ecf1; 
+            color: #0c5460; 
+            border: 1px solid #bee5eb; 
+        }
+        .url-test {
+            font-family: monospace;
+            background: #f1f3f4;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+        button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056CC;
+        }
+        .current-url {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .language-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .language-link {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #007AFF;
+            font-weight: 500;
+        }
+        .language-link:hover {
+            background: #007AFF;
+            color: white;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+        .status-ok { background: #28a745; }
+        .status-error { background: #dc3545; }
+        .status-warning { background: #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h1>FastFun RC - Multi-language Debug Tool</h1>
+        <p>This tool helps diagnose and fix multi-language routing issues.</p>
+        
+        <div class="test-section">
+            <h2 class="test-title">Current URL Analysis</h2>
+            <div class="current-url" id="currentUrl">Loading...</div>
+            <div id="urlAnalysis"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">Language Page Availability Test</h2>
+            <div id="languageTests"></div>
+            <div class="language-links">
+                <a href="index.html" class="language-link">English</a>
+                <a href="es/index.html" class="language-link">Español</a>
+                <a href="pt/index.html" class="language-link">Português</a>
+                <a href="fr/index.html" class="language-link">Français</a>
+                <a href="it/index.html" class="language-link">Italiano</a>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">JavaScript Functionality Test</h2>
+            <button onclick="testLanguageDetection()">Test Language Detection</button>
+            <button onclick="testLanguageSwitching()">Test Language Switching</button>
+            <button onclick="testTranslations()">Test Translations Loading</button>
+            <button onclick="testUrlRouting()">Test URL Routing</button>
+            <div id="jsTestResults"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">Server Configuration Check</h2>
+            <button onclick="checkServerConfig()">Check Server Config</button>
+            <div id="serverConfigResults"></div>
+        </div>
+    </div>
+
+    <script>
+        let testResults = [];
+        
+        function logResult(test, status, message, details = null) {
+            const result = {
+                test: test,
+                status: status,
+                message: message,
+                details: details,
+                timestamp: new Date().toISOString()
+            };
+            testResults.push(result);
+            
+            // Display result
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${status}`;
+            resultDiv.innerHTML = `
+                <strong>${test}:</strong> ${message}
+                ${details ? `<br><small>${details}</small>` : ''}
+                <span class="status-indicator status-${status === 'success' ? 'ok' : status === 'error' ? 'error' : 'warning'}"></span>
+            `;
+            
+            const container = document.getElementById('jsTestResults') || document.getElementById('serverConfigResults');
+            if (container) {
+                container.appendChild(resultDiv);
+            }
+        }
+        
+        function analyzeCurrentUrl() {
+            const currentUrl = window.location.href;
+            const pathname = window.location.pathname;
+            const origin = window.location.origin;
+            
+            document.getElementById('currentUrl').innerHTML = `
+                <strong>Current URL:</strong><br>
+                <div class="url-test">${currentUrl}</div>
+                <br><strong>Pathname:</strong><br>
+                <div class="url-test">${pathname}</div>
+                <br><strong>Origin:</strong><br>
+                <div class="url-test">${origin}</div>
+            `;
+            
+            // Analyze URL structure
+            const analysis = document.getElementById('urlAnalysis');
+            let analysisHtml = '<strong>URL Analysis:</strong><br>';
+            
+            // Check for language prefix
+            const langMatch = pathname.match(/^\/(es|pt|fr|it)\//);
+            if (langMatch) {
+                analysisHtml += `✅ Language prefix detected: ${langMatch[1]}<br>`;
+            } else {
+                analysisHtml += `❌ No language prefix detected<br>`;
+            }
+            
+            // Check if it's a directory
+            if (pathname.endsWith('/')) {
+                analysisHtml += `⚠️ URL ends with trailing slash<br>`;
+            }
+            
+            // Check for index.html
+            if (pathname.includes('index.html')) {
+                analysisHtml += `✅ Contains index.html<br>`;
+            } else {
+                analysisHtml += `⚠️ No index.html in path<br>`;
+            }
+            
+            // Check file structure expectations
+            const expectedFiles = [
+                'index.html',
+                'es/index.html',
+                'pt/index.html', 
+                'fr/index.html',
+                'it/index.html'
+            ];
+            
+            analysisHtml += '<br><strong>Expected file structure:</strong><br>';
+            expectedFiles.forEach(file => {
+                const fileUrl = `${origin}/${file}`;
+                analysisHtml += `<a href="${fileUrl}" target="_blank">${file}</a><br>`;
+            });
+            
+            analysis.innerHTML = analysisHtml;
+        }
+        
+        function testLanguageDetection() {
+            logResult('Language Detection', 'info', 'Testing language detection from URL...');
+            
+            const path = window.location.pathname;
+            const langMatch = path.match(/^\/(es|pt|fr|it)\//);
+            
+            if (langMatch) {
+                logResult('Language Detection', 'success', `Detected language: ${langMatch[1]}`, `URL pattern: ${langMatch[0]}`);
+            } else {
+                logResult('Language Detection', 'warning', 'No language prefix detected', 'Defaulting to English');
+            }
+        }
+        
+        function testLanguageSwitching() {
+            logResult('Language Switching', 'info', 'Testing language switching functionality...');
+            
+            // Test if language selector exists
+            const dropdown = document.getElementById('languageDropdown');
+            const menu = document.getElementById('languageMenu');
+            
+            if (!dropdown || !menu) {
+                logResult('Language Switching', 'error', 'Language selector elements not found');
+                return;
+            }
+            
+            logResult('Language Switching', 'success', 'Language selector elements found');
+            
+            // Test language options
+            const options = document.querySelectorAll('.language-option');
+            if (options.length === 0) {
+                logResult('Language Switching', 'error', 'No language options found');
+                return;
+            }
+            
+            logResult('Language Switching', 'success', `Found ${options.length} language options`);
+            
+            // Test current language display
+            const currentLangElement = document.getElementById('currentLanguage');
+            if (currentLangElement) {
+                const currentLang = currentLangElement.textContent;
+                logResult('Language Display', 'success', `Current language display: ${currentLang}`);
+            } else {
+                logResult('Language Display', 'error', 'Current language display element not found');
+            }
+        }
+        
+        async function testTranslations() {
+            logResult('Translations Loading', 'info', 'Testing translations.json loading...');
+            
+            try {
+                const response = await fetch('../translations.json');
+                if (response.ok) {
+                    const translations = await response.json();
+                    const languages = Object.keys(translations);
+                    
+                    logResult('Translations Loading', 'success', `Translations loaded successfully`, `Languages: ${languages.join(', ')}`);
+                    
+                    // Test each language has required keys
+                    languages.forEach(lang => {
+                        const langData = translations[lang];
+                        const requiredKeys = ['site', 'nav', 'home'];
+                        const missingKeys = requiredKeys.filter(key => !langData[key]);
+                        
+                        if (missingKeys.length > 0) {
+                            logResult('Translations Validation', 'warning', `Language ${lang} missing keys: ${missingKeys.join(', ')}`);
+                        } else {
+                            logResult('Translations Validation', 'success', `Language ${lang} has all required keys`);
+                        }
+                    });
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                logResult('Translations Loading', 'error', `Failed to load translations: ${error.message}`);
+            }
+        }
+        
+        function testUrlRouting() {
+            logResult('URL Routing', 'info', 'Testing URL routing logic...');
+            
+            // Test current path detection
+            const testPaths = [
+                '/',
+                '/index.html',
+                '/es/',
+                '/es/index.html',
+                '/pt/',
+                '/pt/index.html',
+                '/fr/',
+                '/fr/index.html',
+                '/it/',
+                '/it/index.html'
+            ];
+            
+            testPaths.forEach(path => {
+                const expectedLang = path.match(/^\/(es|pt|fr|it)\//);
+                const expectedPageName = path.replace(/^\/(es|pt|fr|it)\//, '').replace(/^\//, '') || 'index.html';
+                
+                logResult('URL Routing Test', 'info', `Testing path: ${path}`, `Expected: lang=${expectedLang ? expectedLang[1] : 'en'}, page=${expectedPageName}`);
+            });
+        }
+        
+        async function checkServerConfig() {
+            logResult('Server Configuration', 'info', 'Checking server configuration...');
+            
+            // Test CORS headers
+            try {
+                const response = await fetch('../translations.json', {
+                    method: 'HEAD',
+                    mode: 'cors'
+                });
+                
+                logResult('CORS Test', 'info', `Translations file response: ${response.status} ${response.statusText}`);
+                
+                const corsHeader = response.headers.get('Access-Control-Allow-Origin');
+                if (corsHeader) {
+                    logResult('CORS Test', 'success', `CORS header present: ${corsHeader}`);
+                } else {
+                    logResult('CORS Test', 'warning', 'No CORS header detected');
+                }
+                
+                // Test content type
+                const contentType = response.headers.get('Content-Type');
+                if (contentType) {
+                    logResult('Content Type Test', 'success', `Content-Type: ${contentType}`);
+                } else {
+                    logResult('Content Type Test', 'warning', 'No Content-Type header detected');
+                }
+                
+            } catch (error) {
+                logResult('Server Configuration', 'error', `Failed to check server config: ${error.message}`);
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            analyzeCurrentUrl();
+            testLanguageDetection();
+            testLanguageSwitching();
+        });
+    </script>
+</body>
+</html>
