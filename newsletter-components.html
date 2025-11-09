@@ -1,0 +1,462 @@
+<!-- Apple-inspired Newsletter Components -->
+
+<!-- Homepage Newsletter Component -->
+<section class="container">
+    <div class="newsletter" id="homepageNewsletter">
+        <div class="newsletter-content">
+            <h2 data-i18n="home.newsletter.title">Stay Updated</h2>
+            <p data-i18n="home.newsletter.description">Subscribe to our newsletter for the latest technical insights and product updates. GDPR compliant - unsubscribe anytime.</p>
+            
+            <form class="newsletter-form" id="homepageNewsletterForm">
+                <div class="input-group">
+                    <input 
+                        type="email" 
+                        class="newsletter-input" 
+                        data-i18n-placeholder="home.newsletter.placeholder" 
+                        placeholder="Enter your email" 
+                        required
+                        aria-label="Email address for newsletter subscription"
+                    >
+                    <button type="submit" class="btn btn-primary" data-i18n="home.newsletter.button">
+                        <span class="button-text">Subscribe</span>
+                        <div class="loading-spinner" style="display: none;"></div>
+                    </button>
+                </div>
+                
+                <div class="secondary-actions">
+                    <button type="button" class="btn btn-outline" onclick="window.open('#')" data-i18n="home.newsletter.downloadCatalog">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download catalog
+                    </button>
+                </div>
+            </form>
+            
+            <div class="newsletter-footer">
+                <p>
+                    By subscribing, you agree to our 
+                    <a href="#" data-i18n="home.newsletter.privacy">Privacy Policy</a> and 
+                    <a href="#" data-i18n="home.newsletter.terms">Terms of Service</a>
+                </p>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l8-3 8 3v7z"/>
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7z"/>
+                        </svg>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l8-3 8 3v7z"/>
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7z"/>
+                        </svg>
+                        <span>Unsubscribe Anytime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Page Newsletter Component -->
+<section class="container">
+    <div class="blog-newsletter newsletter" id="blogpageNewsletter">
+        <div class="newsletter-content">
+            <div class="newsletter-header">
+                <h2 data-i18n="blog.subscribe.title">Stay Updated</h2>
+                <p data-i18n="blog.subscribe.description">Subscribe to our newsletter for the latest technical insights and product updates.</p>
+            </div>
+            
+            <div class="newsletter-benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Weekly Technical Insights</h3>
+                        <p>Get the latest RF technology trends and innovations delivered to your inbox</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="12 12 12 12 12 12"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Product Updates</h3>
+                        <p>Be the first to know about new releases and feature enhancements</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="18.5" r="2.5"/>
+                            <path d="M20 8v6"/>
+                            <path d="M4 15v6"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Exclusive Content</h3>
+                        <p>Access subscriber-only articles and detailed technical guides</p>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="newsletter-form" id="blogpageNewsletterForm">
+                <div class="input-group">
+                    <input 
+                        type="email" 
+                        class="newsletter-input" 
+                        data-i18n-placeholder="blog.subscribe.placeholder" 
+                        placeholder="Enter your email" 
+                        required
+                        aria-label="Email address for blog newsletter subscription"
+                    >
+                    <button type="submit" class="btn btn-primary" data-i18n="blog.subscribe.button">
+                        <span class="button-text">Subscribe</span>
+                        <div class="loading-spinner" style="display: none;"></div>
+                    </button>
+                </div>
+                
+                <div class="subscription-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="weeklyDigest" checked>
+                        <span class="checkmark"></span>
+                        <span>Weekly digest</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="productUpdates" checked>
+                        <span class="checkmark"></span>
+                        <span>Product updates</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="exclusiveContent">
+                        <span class="checkmark"></span>
+                        <span>Exclusive content</span>
+                    </label>
+                </div>
+            </form>
+            
+            <div class="newsletter-footer">
+                <p>
+                    Join <strong>10,000+ professionals</strong> already subscribed. 
+                    <a href="#" data-i18n="blog.subscribe.viewArchive">View archive</a>
+                </p>
+                <div class="social-proof">
+                    <div class="testimonial-mini">
+                        <img src="https://picsum.photos/seed/user1/40/40.jpg" alt="Subscriber" class="avatar">
+                        <div class="testimonial-content">
+                            <p>"The most valuable technical newsletter in our industry."</p>
+                            <span class="author">- Sarah Chen, Smart Home Integrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enhanced Newsletter CSS for Additional Components -->
+<style>
+/* Newsletter Input Group */
+.input-group {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: stretch;
+    margin-bottom: var(--spacing-lg);
+}
+
+.input-group .newsletter-input {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Secondary Actions */
+.secondary-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.secondary-actions .btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.trust-item:hover {
+    opacity: 1;
+}
+
+.trust-item svg {
+    flex-shrink: 0;
+}
+
+/* Newsletter Benefits */
+.newsletter-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.benefit-item {
+    display: flex;
+    gap: var(--spacing-md);
+    text-align: left;
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-medium);
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.benefit-content h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
+    color: white;
+}
+
+.benefit-content p {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Subscription Options */
+.subscription-options {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+}
+
+.checkbox-label:hover {
+    opacity: 0.8;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-sm);
+    position: relative;
+    transition: all var(--transition-fast);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: white;
+    border-color: white;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 6px;
+    height: 10px;
+    border: solid var(--primary-blue);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Social Proof */
+.social-proof {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.testimonial-mini {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.testimonial-content {
+    text-align: left;
+}
+
+.testimonial-content p {
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
+}
+
+.testimonial-content .author {
+    font-size: var(--font-size-xs);
+    opacity: 0.7;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Blog Page Specific Styles */
+.blog-newsletter .newsletter-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.blog-newsletter .newsletter-benefits {
+    margin-bottom: var(--spacing-xl);
+}
+
+.blog-newsletter .benefit-item {
+    background: var(--background-white);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-light);
+}
+
+.blog-newsletter .benefit-icon {
+    background: var(--primary-blue-light);
+    color: var(--primary-blue);
+}
+
+.blog-newsletter .benefit-content h3 {
+    color: var(--text-primary);
+}
+
+.blog-newsletter .benefit-content p {
+    color: var(--text-secondary);
+}
+
+.blog-newsletter .subscription-options {
+    margin: var(--spacing-lg) 0;
+}
+
+.blog-newsletter .checkbox-label {
+    color: var(--text-secondary);
+}
+
+.blog-newsletter .checkmark {
+    border-color: var(--border-light);
+    background: var(--background-white);
+}
+
+.blog-newsletter .checkbox-label input[type="checkbox"]:checked + .checkmark {
+    border-color: var(--primary-blue);
+}
+
+.blog-newsletter .testimonial-mini {
+    background: var(--background-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .trust-indicators {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+    }
+    
+    .newsletter-benefits {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+    
+    .subscription-options {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+    }
+    
+    .testimonial-mini {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+}
+</style>
