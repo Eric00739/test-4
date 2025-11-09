@@ -24,10 +24,12 @@ async function initializeApp() {
     initializeForms();
     initializeAnimations();
     initializeSmoothScrolling();
+    initializeAccessibility();
     
-    // Load saved language preference after translations are loaded
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    setLanguage(savedLanguage);
+    // Detect language from URL or use saved preference
+    const urlLanguage = detectLanguageFromUrl();
+    const savedLanguage = localStorage.getItem('preferredLanguage') || urlLanguage || 'en';
+    setLanguage(savedLanguage, false); // Don't update URL on initial load
     
     // Hide loading state
     hideLoadingState();
@@ -100,7 +102,7 @@ async function loadTranslations() {
 }
 
 // Language Management
-function setLanguage(lang) {
+function setLanguage(lang, updateUrl = true) {
     if (!translations[lang]) {
         console.warn(`Translation for language '${lang}' not found`);
         return;
@@ -128,6 +130,73 @@ function setLanguage(lang) {
     
     // Update page title and meta tags
     updatePageMetadata(lang);
+    
+    // Update URL if requested
+    if (updateUrl) {
+        updateLanguageUrl(lang);
+    }
+    
+    // Update hreflang links
+    updateHreflangLinks(lang);
+    
+    // Track language change
+    if (typeof trackLanguageChange !== 'undefined' && currentLanguage !== lang) {
+        trackLanguageChange(currentLanguage, lang);
+    }
+    
+    // Announce language change to screen readers
+    if (typeof announceToScreenReader !== 'undefined') {
+        announceToScreenReader(`Language changed to ${lang.toUpperCase()}`);
+    }
+}
+
+function updateLanguageUrl(lang) {
+    if (lang === 'en') {
+        // For English, remove language prefix
+        const currentPath = window.location.pathname;
+        const langPrefixRegex = /^\/(es|pt|fr|it)\//;
+        
+        if (langPrefixRegex.test(currentPath)) {
+            const newPath = currentPath.replace(langPrefixRegex, '/');
+            window.history.replaceState({}, '', newPath);
+        }
+    } else {
+        // For other languages, add/update language prefix
+        const currentPath = window.location.pathname;
+        const langPrefixRegex = /^\/(es|pt|fr|it)\//;
+        
+        if (langPrefixRegex.test(currentPath)) {
+            // Replace existing language prefix
+            const newPath = currentPath.replace(langPrefixRegex, `/${lang}/`);
+            window.history.replaceState({}, '', newPath);
+        } else {
+            // Add new language prefix
+            const newPath = `/${lang}${currentPath}`;
+            window.history.replaceState({}, '', newPath);
+        }
+    }
+}
+
+function updateHreflangLinks(currentLang) {
+    const supportedLanguages = ['en', 'es', 'pt', 'fr', 'it'];
+    const baseUrl = window.location.origin;
+    
+    supportedLanguages.forEach(lang => {
+        const link = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+        if (link) {
+            if (lang === 'en') {
+                link.href = baseUrl + '/';
+            } else {
+                link.href = `${baseUrl}/${lang}/`;
+            }
+        }
+    });
+    
+    // Update x-default
+    const defaultLink = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    if (defaultLink) {
+        defaultLink.href = baseUrl + '/';
+    }
 }
 
 function getTranslationValue(langData, keyPath) {
@@ -230,7 +299,19 @@ function initializeLanguageSelector() {
         option.addEventListener('click', function(e) {
             e.preventDefault();
             const lang = this.dataset.lang;
-            setLanguage(lang);
+            
+            // Check if we need to navigate to a different page
+            const currentPage = window.location.pathname;
+            const isHomePage = currentPage === '/' || currentPage === '/index.html';
+            
+            if (isHomePage) {
+                // On home page, just update language without navigation
+                setLanguage(lang);
+            } else {
+                // On other pages, navigate to the language-specific version
+                navigateToLanguageVersion(lang, currentPage);
+            }
+            
             menu.classList.remove('active');
         });
     });
@@ -239,6 +320,34 @@ function initializeLanguageSelector() {
     document.addEventListener('click', function() {
         menu.classList.remove('active');
     });
+}
+
+function navigateToLanguageVersion(lang, currentPath) {
+    // Extract the current page name without language prefix
+    const pageName = currentPath.replace(/^\/(es|pt|fr|it)\//, '').replace(/^\//, '');
+    
+    // Build the new URL
+    let newUrl;
+    if (lang === 'en') {
+        newUrl = `/${pageName}`;
+    } else {
+        newUrl = `/${lang}/${pageName}`;
+    }
+    
+    // Navigate to the new language version
+    window.location.href = newUrl;
+}
+
+// Detect language from URL
+function detectLanguageFromUrl() {
+    const path = window.location.pathname;
+    const langMatch = path.match(/^\/(es|pt|fr|it)\//);
+    
+    if (langMatch) {
+        return langMatch[1];
+    }
+    
+    return 'en'; // Default to English
 }
 
 // Mobile Menu
@@ -316,28 +425,19 @@ function handleContactForm(e) {
     submitButton.textContent = translations[currentLanguage]?.contact?.form?.sending || 'Sending...';
     submitButton.disabled = true;
     
-    // Real form submission to a backend service
-    // Replace 'https://api.example.com/contact' with your actual backend endpoint
-    fetch('https://api.fastfunrc.com/contact', {
+    // Use Formspree for form submission
+    fetch(e.target.action, {
         method: 'POST',
+        body: formData,
         headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            name: formData.get('name'),
-            email: formData.get('email'),
-            language: formData.get('language'),
-            product: formData.get('product'),
-            message: formData.get('message'),
-            _subject: 'Contact Form Submission from FastFun RC Website'
-        })
+        }
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.ok) {
+            return response.json();
         }
-        return response.json();
+        throw new Error(`HTTP error! status: ${response.status}`);
     })
     .then(data => {
         // Show success message
@@ -360,12 +460,56 @@ function handleContactForm(e) {
     })
     .catch(error => {
         console.error('Form submission error:', error);
-        // Show error message
+        
+        // Enhanced error handling with specific error types
+        let errorMessage = translations[currentLanguage]?.contact?.form?.error || 'Sorry, there was an error sending your message. Please try again later.';
+        
+        if (error.response) {
+            // Handle HTTP errors
+            switch (error.response.status) {
+                case 400:
+                    errorMessage = 'Please check all required fields and try again.';
+                    break;
+                case 429:
+                    errorMessage = 'Too many requests. Please wait a moment and try again.';
+                    break;
+                case 500:
+                    errorMessage = 'Server error. Please try again later or contact us directly.';
+                    break;
+                case 503:
+                    errorMessage = 'Service unavailable. Please try again later.';
+                    break;
+                default:
+                    errorMessage = `Error ${error.response.status}: ${error.response.statusText || 'Unknown error occurred.'}`;
+            }
+        } else if (error.name === 'TypeError') {
+            errorMessage = 'Network error. Please check your connection and try again.';
+        } else if (error.name === 'AbortError') {
+            errorMessage = 'Request was cancelled. Please try again if needed.';
+        }
+        
+        // Show error message with enhanced styling
         if (formMessage) {
-            formMessage.textContent = translations[currentLanguage]?.contact?.form?.error || 'Sorry, there was an error sending your message. Please try again later.';
+            formMessage.textContent = errorMessage;
             formMessage.className = 'form-message error';
             formMessage.style.display = 'block';
+            formMessage.setAttribute('role', 'alert');
+            formMessage.setAttribute('aria-live', 'polite');
+            
+            // Announce to screen readers
+            if (typeof announceToScreenReader !== 'undefined') {
+                announceToScreenReader(`Form submission error: ${errorMessage}`);
+            }
         }
+        
+        // Log detailed error for debugging
+        console.error('Form submission failed:', {
+            error: error,
+            errorMessage: errorMessage,
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            formType: 'contact_form'
+        });
     })
     .finally(() => {
         // Restore button
@@ -392,9 +536,8 @@ function handleNewsletterForm(e) {
     button.textContent = translations[currentLanguage]?.blog?.subscribe?.subscribing || 'Subscribing...';
     button.disabled = true;
     
-    // Real newsletter subscription
-    // Replace 'https://api.example.com/newsletter' with your actual newsletter service endpoint
-    fetch('https://api.fastfunrc.com/newsletter', {
+    // Use Formspree for newsletter subscription
+    fetch('https://formspree.io/f/xqkavzwp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -402,16 +545,17 @@ function handleNewsletterForm(e) {
         },
         body: JSON.stringify({
             email: email,
+            form_type: 'newsletter',
             source: 'fastfunrc.com',
             language: currentLanguage,
             _subject: 'Newsletter Subscription from FastFun RC Website'
         })
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.ok) {
+            return response.json();
         }
-        return response.json();
+        throw new Error(`HTTP error! status: ${response.status}`);
     })
     .then(data => {
         // Show success message
@@ -431,9 +575,46 @@ function handleNewsletterForm(e) {
     })
     .catch(error => {
         console.error('Newsletter subscription error:', error);
-        // Show error message
-        button.textContent = translations[currentLanguage]?.blog?.subscribe?.error || 'Error. Please try again.';
+        
+        // Enhanced error handling for newsletter
+        let errorMessage = translations[currentLanguage]?.blog?.subscribe?.error || 'Error. Please try again.';
+        
+        if (error.response) {
+            switch (error.response.status) {
+                case 400:
+                    errorMessage = 'Please enter a valid email address.';
+                    break;
+                case 409:
+                    errorMessage = 'This email is already subscribed.';
+                    break;
+                case 429:
+                    errorMessage = 'Too many subscription attempts. Please wait and try again.';
+                    break;
+                default:
+                    errorMessage = `Subscription error: ${error.response.statusText || 'Please try again later.'}`;
+            }
+        } else if (error.name === 'TypeError') {
+            errorMessage = 'Network error. Please check your connection and try again.';
+        }
+        
+        // Show error message with enhanced styling
+        button.textContent = errorMessage;
         button.classList.add('error');
+        button.setAttribute('aria-label', `Subscription error: ${errorMessage}`);
+        
+        // Announce to screen readers
+        if (typeof announceToScreenReader !== 'undefined') {
+            announceToScreenReader(`Newsletter subscription error: ${errorMessage}`);
+        }
+        
+        // Log detailed error for debugging
+        console.error('Newsletter subscription failed:', {
+            error: error,
+            errorMessage: errorMessage,
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            formType: 'newsletter_signup'
+        });
     })
     .finally(() => {
         // Restore button after 3 seconds
@@ -466,9 +647,8 @@ function handleQuickQuoteForm(e) {
         e.target.appendChild(messageDiv);
     }
     
-    // Real form submission to a backend service
-    // Replace 'https://api.example.com/quick-quote' with your actual backend endpoint
-    fetch('https://api.fastfunrc.com/quick-quote', {
+    // Use Formspree for quick quote submission
+    fetch('https://formspree.io/f/xqkavzwp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -481,15 +661,16 @@ function handleQuickQuoteForm(e) {
             email: formData.get('email'),
             phone: formData.get('phone'),
             message: formData.get('message'),
+            form_type: 'quick_quote',
             language: currentLanguage,
             _subject: 'Quick Quote Request from FastFun RC Website'
         })
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.ok) {
+            return response.json();
         }
-        return response.json();
+        throw new Error(`HTTP error! status: ${response.status}`);
     })
     .then(data => {
         // Show success message
@@ -510,26 +691,57 @@ function handleQuickQuoteForm(e) {
                 'event_label': 'quick_quote_form'
             });
         }
-        
-        // Track in CRM (placeholder for integration)
-        if (typeof hubspot !== 'undefined') {
-            hubspot.track('quote_request', {
-                product: formData.get('product'),
-                quantity: formData.get('quantity'),
-                company: formData.get('company'),
-                email: formData.get('email')
-            });
-        }
     })
     .catch(error => {
         console.error('Quick quote form submission error:', error);
-        // Show error message
+        
+        // Enhanced error handling for quick quote
+        let errorMessage = 'Sorry, there was an error sending your quote request. Please try again or contact us directly.';
+        
+        if (error.response) {
+            switch (error.response.status) {
+                case 400:
+                    errorMessage = 'Please fill in all required fields with valid information.';
+                    break;
+                case 413:
+                    errorMessage = 'Request too large. Please reduce file sizes or contact us directly.';
+                    break;
+                case 429:
+                    errorMessage = 'Too many quote requests. Please wait a moment and try again.';
+                    break;
+                case 500:
+                    errorMessage = 'Server error processing your quote. Please contact us directly for immediate assistance.';
+                    break;
+                default:
+                    errorMessage = `Quote request error: ${error.response.statusText || 'Please try again later.'}`;
+            }
+        } else if (error.name === 'TypeError') {
+            errorMessage = 'Network error. Please check your connection and try again.';
+        }
+        
+        // Show error message with enhanced styling
         const messageElement = document.getElementById('quickQuoteFormMessage');
         if (messageElement) {
-            messageElement.textContent = 'Sorry, there was an error sending your quote request. Please try again or contact us directly.';
+            messageElement.textContent = errorMessage;
             messageElement.className = 'form-message error';
             messageElement.style.display = 'block';
+            messageElement.setAttribute('role', 'alert');
+            messageElement.setAttribute('aria-live', 'polite');
+            
+            // Announce to screen readers
+            if (typeof announceToScreenReader !== 'undefined') {
+                announceToScreenReader(`Quote request error: ${errorMessage}`);
+            }
         }
+        
+        // Log detailed error for debugging
+        console.error('Quick quote form submission failed:', {
+            error: error,
+            errorMessage: errorMessage,
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            formType: 'quick_quote_form'
+        });
     })
     .finally(() => {
         // Restore button
@@ -546,31 +758,47 @@ function handleQuickQuoteForm(e) {
     });
 }
 
-// Trust Indicators Counter Animation
+// Trust Indicators Counter Animation - FIXED
 function animateCounters() {
     const counters = document.querySelectorAll('.trust-indicator-value');
-    const speed = 200; // Animation speed
-
+    
     counters.forEach(counter => {
-        const animate = () => {
-            const target = parseFloat(counter.getAttribute('data-target'));
-            const current = parseFloat(counter.innerText);
-            const increment = target / speed;
-
-            if (current < target) {
-                counter.innerText = Math.ceil(current + increment);
-                setTimeout(animate, 10);
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds animation
+        const start = performance.now();
+        const startValue = 0;
+        
+        // Set initial value to ensure it works without animation
+        counter.innerText = '0';
+        
+        function animate(currentTime) {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function for smooth animation
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const currentValue = startValue + (target - startValue) * easeOutQuart;
+            
+            // Update counter with proper formatting
+            if (target % 1 !== 0) {
+                counter.innerText = currentValue.toFixed(1);
             } else {
-                // Handle decimal values
+                counter.innerText = Math.floor(currentValue);
+            }
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                // Ensure final value is exact
                 if (target % 1 !== 0) {
                     counter.innerText = target.toFixed(1);
                 } else {
                     counter.innerText = target;
                 }
             }
-        };
-
-        animate();
+        }
+        
+        requestAnimationFrame(animate);
     });
 }
 
@@ -585,9 +813,21 @@ const counterObserver = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px' // Start animation a bit earlier
+    threshold: 0.3,
+    rootMargin: '0px 0px -50px 0px' // Start animation earlier
 });
+
+// Fallback for immediate display if JavaScript fails or IntersectionObserver not supported
+function initializeCounterFallback() {
+    const counters = document.querySelectorAll('.trust-indicator-value');
+    counters.forEach(counter => {
+        const target = counter.getAttribute('data-target');
+        if (target) {
+            // Set static values as fallback
+            counter.innerText = target;
+        }
+    });
+}
 
 // Enhanced Navigation with Active State and Sticky Behavior
 function initializeEnhancedNavigation() {
@@ -630,10 +870,22 @@ function initializeEnhancedNavigation() {
 
 // Animations
 function initializeAnimations() {
-    // Initialize counter animation
+    // Initialize counter animation with fallback
     const trustSection = document.querySelector('.trust-indicators-section');
     if (trustSection) {
-        counterObserver.observe(trustSection);
+        // Check if IntersectionObserver is supported
+        if ('IntersectionObserver' in window) {
+            counterObserver.observe(trustSection);
+            // Fallback: if animation doesn't trigger after 3 seconds, show static values
+            setTimeout(() => {
+                if (!animationTriggered) {
+                    initializeCounterFallback();
+                }
+            }, 3000);
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            initializeCounterFallback();
+        }
     }
 
     // Initialize enhanced navigation

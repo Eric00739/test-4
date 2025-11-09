@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastFun Remote Control - Soluciones de Control Remoto RF y WiFi</title>
+    <meta name="description" content="Fabricante líder de controles remotos RF, controladores, interruptores WiFi y soluciones de control remoto para automóviles desde 2010.">
+    <meta name="keywords" content="control remoto RF, interruptor inteligente WiFi, control remoto de automóvil aftermarket, controlador RF, kit RF">
+    <meta name="author" content="FastFun Remote Control">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="FastFun Remote Control - Soluciones de Control Remoto RF y WiFi">
+    <meta property="og:description" content="Fabricante líder de controles remotos RF, controladores, interruptores WiFi y soluciones de control remoto para automóviles desde 2010.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastfunrc.com/es/">
+    <meta property="og:image" content="https://fastfunrc.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FastFun Remote Control - Soluciones de Control Remoto RF y WiFi">
+    <meta name="twitter:description" content="Fabricante líder de controles remotos RF, controladores, interruptores WiFi y soluciones de control remoto para automóviles desde 2010.">
+    <meta name="twitter:image" content="https://fastfunrc.com/images/og-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "FastFun Remote Control",
+        "url": "https://fastfunrc.com",
+        "logo": "https://fastfunrc.com/images/logo.png",
+        "description": "Fabricante líder de controles remotos RF, controladores, interruptores WiFi y soluciones de control remoto para automóviles desde 2010.",
+        "foundingDate": "2010",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "8th Floor, Building 1, Huawei Kegu",
+            "addressLocality": "Dalingshan Town",
+            "addressRegion": "Dongguan City",
+            "addressCountry": "China"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+86 158 9964 8898",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "Spanish", "Portuguese", "French", "Italian"]
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/fastfun-remote-control"
+        ]
+    }
+    </script>
+    
+    <!-- Critical CSS inline for performance -->
+    <style>
+/* Critical CSS for FastFun RC - Above the fold content */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Core color palette */
+    --primary-blue: #007AFF;
+    --primary-blue-hover: #0056CC;
+    --background-white: #FFFFFF;
+    --text-primary: #000000;
+    --text-secondary: #3C3C43;
+    --border-light: rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08);
+    
+    /* Core spacing */
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Core typography */
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Core transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base HTML and Body */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-system);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation - Critical for user interaction */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.5rem var(--spacing-md);
+    border-radius: 12px;
+    transition: all var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-blue);
+    background-color: rgba(0, 122, 255, 0.1);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    position: relative;
+    transition: all var(--transition-fast);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Hero Section - Critical above-the-fold content */
+.hero {
+    padding: calc(70px + 3rem) 0 3rem;
+    background: linear-gradient(135deg, var(--background-white) 0%, rgba(0, 122, 255, 0.05) 100%);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons - Critical for user interaction */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    gap: 0.5rem;
+}
+
+a.btn,
+a.btn:visited {
+    color: inherit;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: var(--shadow-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-blue-hover);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-large {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--background-white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: var(--spacing-xl);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+        z-index: 1001;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+
+    .btn-large {
+        width: 100%;
+        max-width: 280px;
+        min-height: 44px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+    </style>
+    
+    <!-- Non-critical CSS deferred loading -->
+    <link rel="preload" href="../styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../styles.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="canonical" href="https://fastfunrc.com/es/">
+    
+    <!-- Hreflang links for multi-language SEO -->
+    <link rel="alternate" hreflang="en" href="https://fastfunrc.com/">
+    <link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/">
+    <link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/">
+    <link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/">
+    <link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/">
+    <link rel="alternate" hreflang="x-default" href="https://fastfunrc.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo" aria-label="FastFun RC Home">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="32" height="32" rx="8" fill="#007AFF"/>
+                    <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="16" cy="16" r="3" fill="white"/>
+                </svg>
+                <span class="sr-only">FastFun RC</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">
+                <li><a href="../index.html" class="nav-link active" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="../about.html" class="nav-link" data-i18n="nav.about">Nosotros</a></li>
+                <li><a href="../products.html#compatibility" class="nav-link" data-i18n="nav.products">Productos</a></li>
+                <li><a href="../blog.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../contact.html" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+                <li>
+                    <div class="language-selector">
+                        <button class="language-dropdown" id="languageDropdown">
+                            <span id="currentLanguage">ES</span>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="language-menu" id="languageMenu">
+                            <a href="../index.html" class="language-option" data-lang="en">English</a>
+                            <a href="#" class="language-option active" data-lang="es">Español</a>
+                            <a href="../pt/" class="language-option" data-lang="pt">Português</a>
+                            <a href="../fr/" class="language-option" data-lang="fr">Français</a>
+                            <a href="../it/" class="language-option" data-lang="it">Italiano</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-controls="navMenu" aria-expanded="false">
+                <div class="hamburger"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-fade-in-up">
+                <h1 class="hero-title" data-i18n="home.heroTitle">Soluciones Innovadoras de Control Remoto</h1>
+                <p class="hero-subtitle" data-i18n="home.heroSubtitle">Controles Remotos RF Profesionales, Interruptores WiFi y Soluciones Aftermarket para Automóviles</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/8615899648898?text=Interesado en soluciones de control remoto RF - FastFun RC" class="btn btn-primary btn-large hero-cta-primary" data-i18n="home.heroCtaPrimary" onclick="trackCTAClick('Obtener Cotización Ahora', 'hero_section'); trackContactClick('WhatsApp', '+8615899648898');">Obtener Cotización Ahora</a>
+                    <a href="../products.html" class="btn btn-outline btn-large hero-cta-secondary" data-i18n="home.heroCtaSecondary" onclick="trackCTAClick('Descargar Catálogo', 'hero_section');">Descargar Catálogo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <div class="text-center">
+                <h2 data-i18n="home.features.title">¿Por Qué Elegir FastFun?</h2>
+            </div>
+            <div class="grid grid-3">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11L12 14L22 4"/>
+                            <path d="M21 12V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H16"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="home.features.quality.title">Calidad Premium</h3>
+                    <ul class="feature-list">
+                        <li data-i18n="home.features.quality.description">Fabricación certificada ISO con control de calidad riguroso</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="home.features.innovation.title">Tecnología de Vanguardia</h3>
+                    <ul class="feature-list">
+                        <li data-i18n="home.features.innovation.description">Última tecnología RF y WiFi para rendimiento confiable</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18.36 6.64A9 9 0 0 0 12 3A9 9 0 0 0 3 12A9 9 0 0 0 12 21A9 9 0 0 0 21 12"/>
+                            <path d="M12 7V12L14.5 14.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="home.features.support.title">Soporte Experto</h3>
+                    <ul class="feature-list">
+                        <li data-i18n="home.features.support.description">Soporte técnico profesional y servicios de personalización</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FastFun Remote Control</h3>
+                    <p>Fabricante líder de soluciones de control remoto profesional desde 2010. Confiado por más de 50,000 profesionales en todo el mundo.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Productos</h3>
+                    <ul class="footer-links">
+                        <li><a href="../products.html#rf-remote" data-i18n="products.rfRemote.title">Control Remoto RF</a></li>
+                        <li><a href="../products.html#rf-controller" data-i18n="products.rfController.title">Controlador RF</a></li>
+                        <li><a href="../products.html#rf-kit" data-i18n="products.rfKit.title">Kit RF</a></li>
+                        <li><a href="../products.html#wifi-switch" data-i18n="products.wifiSwitch.title">Interruptor WiFi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about.html" data-i18n="nav.about">Acerca de Nosotros</a></li>
+                        <li><a href="../blog.html" data-i18n="nav.blog">Blog</a></li>
+                        <li><a href="../contact.html" data-i18n="nav.contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: eric@fastfunrc.com</p>
+                    <p>Teléfono/WhatsApp: +86 158 9964 8898</p>
+                    <p>8th Floor, Building 1, Huwei Kegu<br>Dalingshan Town, Dongguan City<br>Guangdong Province, China</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">© 2025 FastFun Remote. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Analytics Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <script src="../script.js"></script>
+</body>
+</html>

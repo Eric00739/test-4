@@ -1,5 +1,65 @@
 /* FastFun Remote Control - Apple-inspired Design System */
 
+/* Accessibility Enhancements */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-blue);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 10000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Keyboard navigation indicators */
+.keyboard-navigation *:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* Enhanced focus styles */
+.btn:focus,
+.nav-link:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.language-option:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: var(--primary-blue);
+        color: white;
+    }
+}
+
 /* CSS Reset and Base Styles */
 * {
     margin: 0;

@@ -375,10 +375,10 @@ a.btn:visited {
     
     <!-- Hreflang links for multi-language SEO -->
     <link rel="alternate" hreflang="en" href="https://fastfunrc.com/">
-    <link rel="alternate" hreflang="es" href="https://fastfunrc.com/">
-    <link rel="alternate" hreflang="pt" href="https://fastfunrc.com/">
-    <link rel="alternate" hreflang="fr" href="https://fastfunrc.com/">
-    <link rel="alternate" hreflang="it" href="https://fastfunrc.com/">
+    <link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/">
+    <link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/">
+    <link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/">
+    <link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/">
     <link rel="alternate" hreflang="x-default" href="https://fastfunrc.com/">
     
     <!-- Favicon -->
@@ -436,8 +436,8 @@ a.btn:visited {
                 <h1 class="hero-title" data-i18n="home.heroTitle">Professional RF Remote Control Solutions</h1>
                 <p class="hero-subtitle" data-i18n="home.heroSubtitle">14+ Years Manufacturing Excellence | 20+ Brand Compatibility | ODM/OEM Available</p>
                 <div class="hero-buttons">
-                    <a href="https://wa.me/8615899648898?text=Interested in RF remote solutions - FastFun RC" class="btn btn-primary btn-large hero-cta-primary" data-i18n="home.heroCtaPrimary">Get Quote Now</a>
-                    <a href="products.html" class="btn btn-outline btn-large hero-cta-secondary" data-i18n="home.heroCtaSecondary">Download Catalog</a>
+                    <a href="https://wa.me/8615899648898?text=Interested in RF remote solutions - FastFun RC" class="btn btn-primary btn-large hero-cta-primary" data-i18n="home.heroCtaPrimary" onclick="trackCTAClick('Get Quote Now', 'hero_section'); trackContactClick('WhatsApp', '+8615899648898');">Get Quote Now</a>
+                    <a href="products.html" class="btn btn-outline btn-large hero-cta-secondary" data-i18n="home.heroCtaSecondary" onclick="trackCTAClick('Download Catalog', 'hero_section');">Download Catalog</a>
                 </div>
             </div>
         </div>
@@ -511,6 +511,7 @@ a.btn:visited {
                     </div>
                     <div class="trust-indicator-content">
                         <span class="trust-indicator-value" data-target="99.7">0</span>
+                        <noscript><span class="trust-indicator-value">99.7</span></noscript>
                         <span class="trust-indicator-label">% On-time Delivery</span>
                     </div>
                 </div>
@@ -524,6 +525,7 @@ a.btn:visited {
                     </div>
                     <div class="trust-indicator-content">
                         <span class="trust-indicator-value" data-target="50">0</span>
+                        <noscript><span class="trust-indicator-value">50</span></noscript>
                         <span class="trust-indicator-label">+ Countries Served</span>
                     </div>
                 </div>
@@ -535,6 +537,7 @@ a.btn:visited {
                     </div>
                     <div class="trust-indicator-content">
                         <span class="trust-indicator-value" data-target="20">0</span>
+                        <noscript><span class="trust-indicator-value">20</span></noscript>
                         <span class="trust-indicator-label">+ Brand Compatibility</span>
                     </div>
                 </div>
@@ -546,6 +549,7 @@ a.btn:visited {
                     </div>
                     <div class="trust-indicator-content">
                         <span class="trust-indicator-value" data-target="4.9">0</span>
+                        <noscript><span class="trust-indicator-value">4.9</span></noscript>
                         <span class="trust-indicator-label">/5 Customer Rating</span>
                     </div>
                 </div>
@@ -681,8 +685,8 @@ a.btn:visited {
                     <p>Join 50,000+ professionals who trust FastFun RC for their custom remote control solutions</p>
                 </div>
                 <div class="cta-buttons">
-                    <a href="contact.html?service=odm-oem" class="btn btn-primary btn-large">Request ODM/OEM Quote</a>
-                    <a href="products.html#compatibility" class="btn btn-outline btn-large">View Full Brand List</a>
+                    <a href="contact.html?service=odm-oem" class="btn btn-primary btn-large" onclick="trackCTAClick('Request ODM/OEM Quote', 'odm_oem_section');">Request ODM/OEM Quote</a>
+                    <a href="products.html#compatibility" class="btn btn-outline btn-large" onclick="trackCTAClick('View Full Brand List', 'odm_oem_section');">View Full Brand List</a>
                 </div>
             </div>
         </div>
@@ -739,7 +743,7 @@ a.btn:visited {
                         <li><strong>Operations:</strong> <span data-i18n="home.customerSuccess.assurance.operations">serialized QA reports and drop-in packaging templates for franchise networks.</span></li>
                         <li><strong>Support:</strong> <span data-i18n="home.customerSuccess.assurance.support">direct Slack/WeChat war room during product launches and firmware updates.</span></li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary btn-inline" data-i18n="home.customerSuccess.assurance.cta">Schedule a customer experience demo</a>
+                    <a href="contact.html" class="btn btn-primary btn-inline" data-i18n="home.customerSuccess.assurance.cta" onclick="trackCTAClick('Schedule a customer experience demo', 'customer_success_section');">Schedule a customer experience demo</a>
                 </div>
             </div>
         </div>
@@ -819,95 +823,119 @@ a.btn:visited {
             <div class="grid grid-4">
                 <figure class="card product-card">
                     <img src="https://picsum.photos/seed/universal-rf-remote/400/300.jpg"
-                         alt="Universal RF remote compatible with Wi-Fi integration"
+                         alt="Universal RF remote control device with multiple buttons and Wi-Fi integration capabilities"
                          class="card-image"
                          loading="lazy"
-                         srcset="https://picsum.photos/seed/universal-rf-remote/800/600.jpg 2x"
-                         sizes="(max-width: 400px) 400px, 800px">
+                         decoding="async"
+                         fetchpriority="high"
+                         srcset="https://picsum.photos/seed/universal-rf-remote/400/300.webp 400w,
+                                 https://picsum.photos/seed/universal-rf-remote/800/600.webp 800w"
+                         sizes="(max-width: 400px) 400px, 800px"
+                         type="image/webp"
+                         role="img"
+                         aria-describedby="rf-remote-desc">
                     <div class="card-header">
                         <h3 class="card-title">Universal RF Remote</h3>
-                        <figcaption class="card-description">433/315MHz dual frequency with 80%+ brand compatibility</figcaption>
+                        <p id="rf-remote-desc" class="card-description">433/315MHz dual frequency with 80%+ brand compatibility</p>
                     </div>
-                    <a href="products.html#rf-remote" class="btn btn-primary">View compatible models</a>
+                    <a href="products.html#rf-remote" class="btn btn-primary" onclick="trackCTAClick('View compatible models', 'products_preview_rf_remote');">View compatible models</a>
                 </figure>
                 <figure class="card product-card">
                     <img src="https://picsum.photos/seed/rf-controller-device/400/300.jpg"
-                         alt="RF controller supporting multi-device automation"
+                         alt="RF controller device with enterprise-grade encryption for multi-device automation systems"
                          class="card-image"
                          loading="lazy"
-                         srcset="https://picsum.photos/seed/rf-controller-device/800/600.jpg 2x"
-                         sizes="(max-width: 400px) 400px, 800px">
+                         decoding="async"
+                         fetchpriority="high"
+                         srcset="https://picsum.photos/seed/rf-controller-device/400/300.webp 400w,
+                                 https://picsum.photos/seed/rf-controller-device/800/600.webp 800w"
+                         sizes="(max-width: 400px) 400px, 800px"
+                         type="image/webp"
+                         role="img"
+                         aria-describedby="rf-controller-desc">
                     <div class="card-header">
                         <h3 class="card-title">RF Controller</h3>
-                        <figcaption class="card-description">Advanced multi-device control with enterprise-grade encryption</figcaption>
+                        <p id="rf-controller-desc" class="card-description">Advanced multi-device control with enterprise-grade encryption</p>
                     </div>
-                    <a href="products.html#rf-controller" class="btn btn-primary">View compatible models</a>
+                    <a href="products.html#rf-controller" class="btn btn-primary" onclick="trackCTAClick('View compatible models', 'products_preview_rf_controller');">View compatible models</a>
                 </figure>
                 <figure class="card product-card">
                     <img src="https://picsum.photos/seed/complete-rf-kit/400/300.jpg"
-                         alt="Complete RF control kit with professional accessories"
+                         alt="Complete RF control kit with transmitter, receiver, and professional installation accessories"
                          class="card-image"
                          loading="lazy"
-                         srcset="https://picsum.photos/seed/complete-rf-kit/800/600.jpg 2x"
-                         sizes="(max-width: 400px) 400px, 800px">
+                         decoding="async"
+                         fetchpriority="high"
+                         srcset="https://picsum.photos/seed/complete-rf-kit/400/300.webp 400w,
+                                 https://picsum.photos/seed/complete-rf-kit/800/600.webp 800w"
+                         sizes="(max-width: 400px) 400px, 800px"
+                         type="image/webp"
+                         role="img"
+                         aria-describedby="rf-kit-desc">
                     <div class="card-header">
                         <h3 class="card-title">Complete RF Kit</h3>
-                        <figcaption class="card-description">Professional installation kit with enterprise support</figcaption>
+                        <p id="rf-kit-desc" class="card-description">Professional installation kit with enterprise support</p>
                     </div>
-                    <a href="products.html#rf-kit" class="btn btn-primary">View compatible models</a>
+                    <a href="products.html#rf-kit" class="btn btn-primary" onclick="trackCTAClick('View compatible models', 'products_preview_rf_kit');">View compatible models</a>
                 </figure>
                 <figure class="card product-card">
                     <img src="https://picsum.photos/seed/wifi-smart-switch/400/300.jpg"
-                         alt="WiFi smart switch for connected facilities"
+                         alt="WiFi smart switch device for connected facilities and enterprise smart home integration"
                          class="card-image"
                          loading="lazy"
-                         srcset="https://picsum.photos/seed/wifi-smart-switch/800/600.jpg 2x"
-                         sizes="(max-width: 400px) 400px, 800px">
+                         decoding="async"
+                         fetchpriority="high"
+                         srcset="https://picsum.photos/seed/wifi-smart-switch/400/300.webp 400w,
+                                 https://picsum.photos/seed/wifi-smart-switch/800/600.webp 800w"
+                         sizes="(max-width: 400px) 400px, 800px"
+                         type="image/webp"
+                         role="img"
+                         aria-describedby="wifi-switch-desc">
                     <div class="card-header">
                         <h3 class="card-title">WiFi Smart Switch</h3>
-                        <figcaption class="card-description">Enterprise-grade smart home integration platform</figcaption>
+                        <p id="wifi-switch-desc" class="card-description">Enterprise-grade smart home integration platform</p>
                     </div>
-                    <a href="products.html#wifi-switch" class="btn btn-primary">View compatible models</a>
+                    <a href="products.html#wifi-switch" class="btn btn-primary" onclick="trackCTAClick('View compatible models', 'products_preview_wifi_switch');">View compatible models</a>
                 </figure>
             </div>
             <!-- Product Comparison Table -->
             <div class="comparison-table" style="margin-top: 4rem;">
-                <h3 style="text-align: center; margin-bottom: 2rem;">Technical Specifications Comparison</h3>
+                <h3 id="comparison-title" style="text-align: center; margin-bottom: 2rem;">Technical Specifications Comparison</h3>
                 <div class="table-responsive">
-                    <table>
+                    <table role="table" aria-labelledby="comparison-title">
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Frequency</th>
-                                <th>Range</th>
-                                <th>Compatibility</th>
-                                <th>Price</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Frequency</th>
+                                <th scope="col">Range</th>
+                                <th scope="col">Compatibility</th>
+                                <th scope="col">Price</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Universal RF Remote</strong></td>
+                                <th scope="row"><strong>Universal RF Remote</strong></th>
                                 <td>433/315MHz</td>
                                 <td>100m+</td>
                                 <td>80%+ brands</td>
                                 <td>$34.99</td>
                             </tr>
                             <tr>
-                                <td><strong>RF Controller</strong></td>
+                                <th scope="row"><strong>RF Controller</strong></th>
                                 <td>433MHz</td>
                                 <td>150m+</td>
                                 <td>Enterprise</td>
                                 <td>$59.99</td>
                             </tr>
                             <tr>
-                                <td><strong>Complete RF Kit</strong></td>
+                                <th scope="row"><strong>Complete RF Kit</strong></th>
                                 <td>Dual band</td>
                                 <td>100m+</td>
                                 <td>Professional</td>
                                 <td>$89.99</td>
                             </tr>
                             <tr>
-                                <td><strong>WiFi Smart Switch</strong></td>
+                                <th scope="row"><strong>WiFi Smart Switch</strong></th>
                                 <td>2.4GHz</td>
                                 <td>WiFi range</td>
                                 <td>Enterprise</td>
@@ -919,7 +947,7 @@ a.btn:visited {
             </div>
             
             <div class="text-center" style="margin-top: 3rem;">
-                <a href="products.html" class="btn btn-outline btn-large">View all product lines</a>
+                <a href="products.html" class="btn btn-outline btn-large" onclick="trackCTAClick('View all product lines', 'products_section_footer');">View all product lines</a>
             </div>
         </div>
     </section>
@@ -932,27 +960,27 @@ a.btn:visited {
                 <h2 data-i18n="home.faq.title">Frequently asked before partnering with FastFun RC</h2>
                 <p data-i18n="home.faq.subtitle">Clear policies on lead times, certifications, integrations, and support so you can move forward with confidence.</p>
             </div>
-            <div class="faq-grid">
+            <div class="faq-grid" role="region" aria-label="Frequently Asked Questions">
                 <details class="faq-item" open>
-                    <summary data-i18n="home.faq.q1.question">How fast can we receive custom-programmed remotes?</summary>
+                    <summary data-i18n="home.faq.q1.question" aria-expanded="true">How fast can we receive custom-programmed remotes?</summary>
                     <p data-i18n="home.faq.q1.answer">Standard production orders ship within 7 business days. For OEM profiles, we provide firmware samples in 72 hours and maintain reserved production slots for priority accounts.</p>
                 </details>
                 <details class="faq-item">
-                    <summary data-i18n="home.faq.q2.question">Do you support multilingual packaging and documentation?</summary>
+                    <summary data-i18n="home.faq.q2.question" aria-expanded="false">Do you support multilingual packaging and documentation?</summary>
                     <p data-i18n="home.faq.q2.answer">Yes. Our creative team localizes manuals, QR onboarding flows, and packaging layouts in 12 languages, ensuring compliance with regional regulations and franchise brand books.</p>
                 </details>
                 <details class="faq-item">
-                    <summary data-i18n="home.faq.q3.question">Which certifications and testing reports are included?</summary>
+                    <summary data-i18n="home.faq.q3.question" aria-expanded="false">Which certifications and testing reports are included?</summary>
                     <p data-i18n="home.faq.q3.answer">Every batch ships with CE, FCC, and RoHS certificates plus signal stability and temperature stress reports. We can add UL or customized testing on request.</p>
                 </details>
                 <details class="faq-item">
-                    <summary data-i18n="home.faq.q4.question">How do FastFun RC products integrate with smart home ecosystems?</summary>
+                    <summary data-i18n="home.faq.q4.question" aria-expanded="false">How do FastFun RC products integrate with smart home ecosystems?</summary>
                     <p data-i18n="home.faq.q4.answer">Our WiFi and RF modules connect with HomeKit, Google Home, and Alexa via secure APIs. For industrial clients, we offer MQTT and Modbus gateways with dedicated solution engineers.</p>
                 </details>
             </div>
             <div class="faq-cta">
                 <p data-i18n="home.faqCta.text">Still evaluating? Share your project brief and we'll send a tailored RF compatibility roadmap within one business day.</p>
-                <a href="contact.html" class="btn btn-outline" data-i18n="home.faqCta.button">Send project requirements</a>
+                <a href="contact.html" class="btn btn-outline" data-i18n="home.faqCta.button" onclick="trackCTAClick('Send project requirements', 'faq_section');">Send project requirements</a>
             </div>
         </div>
     </section>
@@ -963,10 +991,12 @@ a.btn:visited {
             <div class="newsletter-content">
                 <h2 data-i18n="home.newsletter.title">Stay Updated</h2>
                 <p data-i18n="home.newsletter.description">Subscribe to our newsletter for the latest technical insights and product updates. GDPR compliant - unsubscribe anytime.</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" class="newsletter-input" data-i18n-placeholder="home.newsletter.placeholder" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary" data-i18n="home.newsletter.button">Subscribe</button>
-                    <button type="button" class="btn btn-outline" onclick="window.open('#')" data-i18n="home.newsletter.downloadCatalog">Download catalog</button>
+                <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/xqkavzwp" method="POST" role="form" aria-label="Newsletter subscription form">
+                    <label for="newsletter-email" class="sr-only">Enter your email for newsletter subscription</label>
+                    <input type="email" id="newsletter-email" class="newsletter-input" data-i18n-placeholder="home.newsletter.placeholder" placeholder="Enter your email" required aria-required="true" aria-describedby="newsletter-help">
+                    <button type="submit" class="btn btn-primary" data-i18n="home.newsletter.button" aria-label="Subscribe to newsletter">Subscribe</button>
+                    <button type="button" class="btn btn-outline" onclick="window.open('#'); trackCTAClick('Download catalog', 'newsletter_section'); trackFileDownload('FastFun-RC-Catalog.pdf', 'pdf');" data-i18n="home.newsletter.downloadCatalog" aria-label="Download product catalog">Download catalog</button>
+                    <p id="newsletter-help" class="sr-only">Subscribe to receive the latest technical insights and product updates. You can unsubscribe at any time.</p>
                 </form>
                 <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.8;">
                     By subscribing, you agree to our <a href="#" style="color: white; text-decoration: underline;" data-i18n="home.newsletter.privacy">Privacy Policy</a> and <a href="#" style="color: white; text-decoration: underline;" data-i18n="home.newsletter.terms">Terms of Service</a>
@@ -1004,8 +1034,9 @@ a.btn:visited {
                 <div class="footer-section">
                     <h3>Contact</h3>
                     <p>Email: eric@fastfunrc.com</p>
-                    <p>Phone/WhatsApp: +86 158 9964 8898</p>
+                    <p>Phone/WhatsApp: <a href="tel:+8615899648898" onclick="trackContactClick('Phone', '+8615899648898');">+86 158 9964 8898</a></p>
                     <p>8th Floor, Building 1, Huwei Kegu<br>Dalingshan Town, Dongguan City<br>Guangdong Province, China</p>
+                    <p><a href="mailto:eric@fastfunrc.com" onclick="trackContactClick('Email', 'eric@fastfunrc.com');">eric@fastfunrc.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1014,13 +1045,124 @@ a.btn:visited {
         </div>
     </footer>
 
-    <!-- Google Analytics Placeholder -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- Google Analytics with proper configuration -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // GA4 Configuration with enhanced features
+        gtag('config', 'G-XXXXXXXXXX', {
+            page_title: document.title,
+            page_location: window.location.href,
+            content_group1: 'B2B RF Solutions',
+            send_page_view: true,
+            allow_google_signals: true,
+            allow_ad_personalization_signals: true,
+            custom_map: {
+                'custom_parameter_1': 'product_category',
+                'custom_parameter_2': 'user_language',
+                'custom_parameter_3': 'form_type'
+            }
+        });
+        
+        // Custom event tracking setup
+        window.trackEvent = function(eventName, parameters) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, parameters);
+            }
+        };
+        
+        // E-commerce tracking setup
+        window.trackEcommerceEvent = function(eventName, parameters) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    ...parameters,
+                    currency: 'USD',
+                    value: parameters.value || 0
+                });
+            }
+        };
+        
+        // Form submission tracking
+        window.trackFormSubmission = function(formType, formLocation) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    form_type: formType,
+                    form_location: formLocation,
+                    user_language: document.documentElement.lang || 'en'
+                });
+            }
+        };
+        
+        // CTA button tracking
+        window.trackCTAClick = function(ctaText, ctaLocation) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'select_content', {
+                    content_type: 'button',
+                    item_id: ctaText,
+                    location: ctaLocation,
+                    user_language: document.documentElement.lang || 'en'
+                });
+            }
+        };
+        
+        // WhatsApp/Phone contact tracking
+        window.trackContactClick = function(contactMethod, contactValue) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'contact', {
+                    method: contactMethod,
+                    value: contactValue,
+                    user_language: document.documentElement.lang || 'en'
+                });
+            }
+        };
+        
+        // File download tracking
+        window.trackFileDownload = function(fileName, fileType) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'file_download', {
+                    file_name: fileName,
+                    file_type: fileType,
+                    link_url: window.location.href,
+                    user_language: document.documentElement.lang || 'en'
+                });
+            }
+        };
+        
+        // Language change tracking
+        window.trackLanguageChange = function(fromLang, toLang) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'language_change', {
+                    from_language: fromLang,
+                    to_language: toLang,
+                    user_language: toLang
+                });
+            }
+        };
+        
+        // Performance tracking
+        window.trackPagePerformance = function() {
+            if (typeof gtag !== 'undefined' && window.performance && window.performance.timing) {
+                const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+                const domContentLoaded = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+                
+                gtag('event', 'page_performance', {
+                    custom_map: {
+                        load_time: loadTime,
+                        dom_content_loaded: domContentLoaded
+                    }
+                });
+            }
+        };
+        
+        // Track performance on page load
+        if (document.readyState === 'complete') {
+            window.trackPagePerformance();
+        } else {
+            window.addEventListener('load', window.trackPagePerformance);
+        }
     </script>
 
     <script src="script.js"></script>
