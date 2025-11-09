@@ -74,13 +74,13 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="index.html" class="logo" aria-label="FastFun RC Home">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <rect width="32" height="32" rx="8" fill="#007AFF"/>
                     <path d="M8 12L16 8L24 12V20L16 24L8 20V12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <circle cx="16" cy="16" r="3" fill="white"/>
                 </svg>
-                FastFun RC
+                <span class="sr-only">FastFun RC</span>
             </a>
             
             <ul class="nav-menu" id="navMenu">
@@ -640,59 +640,225 @@
     </section>
 
     <!-- Product Comparison Section -->
-    <section class="features section">
+    <section class="features section" id="product-comparison">
         <div class="container">
             <div class="text-center">
                 <h2>Product Comparison</h2>
                 <p>Find the perfect solution for your needs</p>
             </div>
-            <div class="card" style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid var(--border-light);">
-                            <th style="padding: 1rem; text-align: left;">Feature</th>
-                            <th style="padding: 1rem; text-align: center;">RF Remote</th>
-                            <th style="padding: 1rem; text-align: center;">RF Controller</th>
-                            <th style="padding: 1rem; text-align: center;">RF Kit</th>
-                            <th style="padding: 1rem; text-align: center;">WiFi Switch</th>
-                            <th style="padding: 1rem; text-align: center;">Car Remote</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 1rem; font-weight: 500;">Range</td>
-                            <td style="padding: 1rem; text-align: center;">100m</td>
-                            <td style="padding: 1rem; text-align: center;">150m</td>
-                            <td style="padding: 1rem; text-align: center;">100m</td>
-                            <td style="padding: 1rem; text-align: center;">WiFi Range</td>
-                            <td style="padding: 1rem; text-align: center;">50m</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 1rem; font-weight: 500;">Power Source</td>
-                            <td style="padding: 1rem; text-align: center;">Battery</td>
-                            <td style="padding: 1rem; text-align: center;">AC/DC</td>
-                            <td style="padding: 1rem; text-align: center;">Both</td>
-                            <td style="padding: 1rem; text-align: center;">AC</td>
-                            <td style="padding: 1rem; text-align: center;">Battery</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 1rem; font-weight: 500;">Installation</td>
-                            <td style="padding: 1rem; text-align: center;">Simple</td>
-                            <td style="padding: 1rem; text-align: center;">Professional</td>
-                            <td style="padding: 1rem; text-align: center;">DIY</td>
-                            <td style="padding: 1rem; text-align: center;">Professional</td>
-                            <td style="padding: 1rem; text-align: center;">Simple</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem; font-weight: 500;">Best For</td>
-                            <td style="padding: 1rem; text-align: center;">Basic Control</td>
-                            <td style="padding: 1rem; text-align: center;">Automation</td>
-                            <td style="padding: 1rem; text-align: center;">Complete Setup</td>
-                            <td style="padding: 1rem; text-align: center;">Smart Home</td>
-                            <td style="padding: 1rem; text-align: center;">Vehicle Security</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="comparison-cards">
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3>RF Remote</h3>
+                        <div class="comparison-price">$34.99</div>
+                    </div>
+                    <div class="comparison-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Range</span>
+                            <span class="spec-value">100m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power</span>
+                            <span class="spec-value">Battery</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Installation</span>
+                            <span class="spec-value">Simple</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Basic Control</span>
+                        </div>
+                    </div>
+                    <div class="comparison-footer">
+                        <a href="contact.html?product=rf-remote" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3>RF Controller</h3>
+                        <div class="comparison-price">$59.99</div>
+                    </div>
+                    <div class="comparison-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Range</span>
+                            <span class="spec-value">150m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power</span>
+                            <span class="spec-value">AC/DC</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Installation</span>
+                            <span class="spec-value">Professional</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Automation</span>
+                        </div>
+                    </div>
+                    <div class="comparison-footer">
+                        <a href="contact.html?product=rf-controller" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3>RF Kit</h3>
+                        <div class="comparison-price">$89.99</div>
+                    </div>
+                    <div class="comparison-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Range</span>
+                            <span class="spec-value">100m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power</span>
+                            <span class="spec-value">Both</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Installation</span>
+                            <span class="spec-value">DIY</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Complete Setup</span>
+                        </div>
+                    </div>
+                    <div class="comparison-footer">
+                        <a href="contact.html?product=rf-kit" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3>WiFi Switch</h3>
+                        <div class="comparison-price">$49.99</div>
+                    </div>
+                    <div class="comparison-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Range</span>
+                            <span class="spec-value">WiFi Range</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power</span>
+                            <span class="spec-value">AC</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Installation</span>
+                            <span class="spec-value">Professional</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Smart Home</span>
+                        </div>
+                    </div>
+                    <div class="comparison-footer">
+                        <a href="contact.html?product=wifi-switch" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3>Car Remote</h3>
+                        <div class="comparison-price">$39.99</div>
+                    </div>
+                    <div class="comparison-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Range</span>
+                            <span class="spec-value">50m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power</span>
+                            <span class="spec-value">Battery</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Installation</span>
+                            <span class="spec-value">Simple</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Vehicle Security</span>
+                        </div>
+                    </div>
+                    <div class="comparison-footer">
+                        <a href="contact.html?product=car-remote" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Quote Section -->
+    <section class="section quick-quote-section">
+        <div class="container">
+            <div class="quick-quote-content">
+                <div class="quick-quote-text">
+                    <h2>Get Your Custom Quote in 3 Simple Steps</h2>
+                    <p>Streamlined process for B2B procurement professionals</p>
+                    <div class="quick-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Select Product</h4>
+                                <p>Choose from our range of RF solutions</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Specify Requirements</h4>
+                                <p>Quantity, customization, and delivery needs</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Receive Quote</h4>
+                                <p>Same-day response from our experts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quick-quote-form">
+                    <h3>Request Quote Now</h3>
+                    <form id="quickQuoteForm" class="quick-quote-form">
+                        <div class="form-group">
+                            <label for="product-select">Product Type</label>
+                            <select id="product-select" name="product" required>
+                                <option value="">Select a product</option>
+                                <option value="rf-remote">RF Remote</option>
+                                <option value="rf-controller">RF Controller</option>
+                                <option value="rf-kit">RF Kit</option>
+                                <option value="wifi-switch">WiFi Switch</option>
+                                <option value="car-remote">Car Remote</option>
+                                <option value="odm-oem">ODM/OEM Custom</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" min="100" placeholder="Minimum order: 100 units" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your company name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone/WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+86 158 9964 8898">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Requirements</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Custom specifications, delivery timeline, etc."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Get Quote</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

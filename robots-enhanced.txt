@@ -1,0 +1,69 @@
+# Enhanced Robots.txt for FastFun RC
+# Optimized for search engine crawling and indexing
+
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Block unnecessary crawling
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /_templates/
+Disallow: /_includes/
+
+# Allow specific important files
+Allow: /sitemap.xml
+Allow: /translations.json
+
+# Crawl delay for good behavior
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://fastfunrc.com/sitemap.xml
+Sitemap: https://fastfunrc.com/sitemap-image.xml
+Sitemap: https://fastfunrc.com/sitemap-video.xml
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow social media crawlers for better sharing
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Allow image indexing
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Allow video indexing
+User-agent: Googlebot-Video
+Allow: /videos/

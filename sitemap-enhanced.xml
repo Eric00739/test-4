@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Homepage with enhanced SEO -->
+    <url>
+        <loc>https://fastfunrc.com/</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://fastfunrc.com/images/hero-banner.jpg</image:loc>
+            <image:title>FastFun RC - Professional RF Remote Control Solutions</image:title>
+            <image:caption>14+ Years Manufacturing Excellence | 20+ Brand Compatibility | ODM/OEM Available</image:caption>
+            <image:geo_location>Dongguan, China</image:geo_location>
+            <image:license>https://fastfunrc.com/license</image:license>
+        </image:image>
+    </url>
+    
+    <!-- About Page -->
+    <url>
+        <loc>https://fastfunrc.com/about.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://fastfunrc.com/images/facility.jpg</image:loc>
+            <image:title>FastFun RC Manufacturing Facility</image:title>
+            <image:caption>ISO 9001:2015 certified manufacturing facility</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Products Page -->
+    <url>
+        <loc>https://fastfunrc.com/products.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://fastfunrc.com/images/product-showcase.jpg</image:loc>
+            <image:title>RF Remote Control Products</image:title>
+            <image:caption>Universal RF remotes compatible with 20+ major brands</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Product Categories -->
+    <url>
+        <loc>https://fastfunrc.com/products.html#rf-remote</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://fastfunrc.com/images/rf-remote.jpg</image:loc>
+            <image:title>Universal RF Remote</image:title>
+            <image:caption>433/315MHz dual frequency with 80%+ brand compatibility</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/products.html#rf-controller</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://fastfunrc.com/images/rf-controller.jpg</image:loc>
+            <image:title>RF Controller</image:title>
+            <image:caption>Advanced multi-device control with enterprise-grade encryption</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/products.html#wifi-switch</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://fastfunrc.com/images/wifi-switch.jpg</image:loc>
+            <image:title>WiFi Smart Switch</image:title>
+            <image:caption>Enterprise-grade smart home integration platform</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Blog Page -->
+    <url>
+        <loc>https://fastfunrc.com/blog.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <news:news>
+            <news:publication>
+                <news:name>FastFun RC Technical Blog</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-11-01T00:00:00+00:00</news:publication_date>
+            <news:title>Latest RF Technology Insights and Industry Updates</news:title>
+        </news:news>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://fastfunrc.com/contact.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://fastfunrc.com/images/contact-office.jpg</image:loc>
+            <image:title>FastFun RC Contact Office</image:title>
+            <image:caption>8th Floor, Building 1, Huawei Kegu, Dalingshan Town, Dongguan City</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Language-specific pages -->
+    <url>
+        <loc>https://fastfunrc.com/es/</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fastfunrc.com/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://fastfunrc.com/es/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://fastfunrc.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fastfunrc.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://fastfunrc.com/it/" />
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/pt/</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/fr/</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/it/</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Technical documentation pages -->
+    <url>
+        <loc>https://fastfunrc.com/technical-specs.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/compatibility-guide.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Support pages -->
+    <url>
+        <loc>https://fastfunrc.com/support.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/faq.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Legal pages -->
+    <url>
+        <loc>https://fastfunrc.com/privacy-policy.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/terms-of-service.html</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Sitemap index pages -->
+    <url>
+        <loc>https://fastfunrc.com/sitemap-image.xml</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://fastfunrc.com/sitemap-video.xml</loc>
+        <lastmod>2024-11-09T08:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+</urlset>

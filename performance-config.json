@@ -1,0 +1,64 @@
+{
+  "optimization": {
+    "images": {
+      "formats": ["webp", "avif"],
+      "quality": {
+        "webp": 80,
+        "avif": 75,
+        "fallback": "jpg"
+      },
+      "responsive": {
+        "breakpoints": [320, 768, 1024, 1200, 1920],
+        "lazy": true,
+        "preload": ["hero", "logo"]
+      }
+    },
+    "css": {
+      "minify": true,
+      "critical": true,
+      "split": true,
+      "purge": true
+    },
+    "javascript": {
+      "minify": true,
+      "split": true,
+      "treeShaking": true,
+      "defer": true,
+      "preload": ["critical"]
+    }
+  },
+  "caching": {
+    "static": {
+      "css": "1y",
+      "js": "1y",
+      "images": "1y",
+      "fonts": "1y"
+    },
+    "dynamic": {
+      "html": "1h",
+      "api": "5m"
+    }
+  },
+  "compression": {
+    "gzip": true,
+    "brotli": true,
+    "level": 6
+  },
+  "cdn": {
+    "enabled": true,
+    "provider": "cloudflare",
+    "regions": ["global"]
+  },
+  "performance": {
+    "targets": {
+      "lcp": "<2.5s",
+      "fid": "<100ms",
+      "cls": "<0.1",
+      "ttfb": "<600ms"
+    },
+    "budget": {
+      "total": "<250KB",
+      "critical": "<50KB"
+    }
+  }
+}

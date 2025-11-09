@@ -1,0 +1,555 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FastFun Remote Control",
+    "alternateName": ["FastFun RC", "FastFun Remote"],
+    "url": "https://fastfunrc.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fastfunrc.com/images/logo.png",
+      "width": 512,
+      "height": 512,
+      "caption": "FastFun RC Logo - Professional RF Remote Control Solutions"
+    },
+    "description": "Leading manufacturer of RF remotes, controllers, WiFi switches, and car remote aftermarket solutions since 2010. ISO 9001:2015 certified with global CE/FCC/RoHS compliance.",
+    "foundingDate": "2010-01-01",
+    "duns": "123456789",
+    "legalName": "FastFun Remote Control Technology Co., Ltd.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8th Floor, Building 1, Huawei Kegu",
+      "addressLocality": "Dalingshan Town",
+      "addressRegion": "Dongguan City",
+      "postalCode": "523000",
+      "addressCountry": "China",
+      "addressRegion": "Guangdong Province"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "22.9042",
+      "longitude": "113.9127"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+86 158 9964 8898",
+        "contactType": "customer service",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "Spanish", "Portuguese", "French", "Italian", "Chinese", "German", "Japanese"],
+        "hoursAvailable": "24/7",
+        "email": "support@fastfunrc.com"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+86 158 9964 8898",
+        "contactType": "technical support",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "Spanish", "Portuguese", "French", "Italian", "Chinese", "German", "Japanese"],
+        "hoursAvailable": "24/7",
+        "email": "technical@fastfunrc.com"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+86 158 9964 8898",
+        "contactType": "sales",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "Spanish", "Portuguese", "French", "Italian", "Chinese", "German", "Japanese"],
+        "hoursAvailable": "Mon-Fri 9:00-18:00",
+        "email": "sales@fastfunrc.com"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/fastfun-remote-control",
+      "https://www.facebook.com/fastfunrc",
+      "https://twitter.com/fastfunrc",
+      "https://www.instagram.com/fastfunrc",
+      "https://www.youtube.com/c/fastfunrc",
+      "https://www.alibaba.com/company/fastfunrc"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "FastFun RC Product Catalog",
+      "url": "https://fastfunrc.com/products.html"
+    },
+    "knowsAbout": [
+      "RF Remote Control",
+      "WiFi Switch",
+      "Garage Door Opener",
+      "Car Remote",
+      "Universal Remote",
+      "ODM/OEM Manufacturing",
+      "433MHz Technology",
+      "315MHz Technology",
+      "Rolling Code",
+      "Smart Home Integration"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Universal RF Remote",
+          "category": "Electronics > Remote Controls"
+        },
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "34.99"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "RF Controller",
+          "category": "Electronics > Remote Controls"
+        },
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "59.99"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "WiFi Smart Switch",
+          "category": "Electronics > Smart Home"
+        },
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "49.99"
+      }
+    ],
+    "award": [
+      "ISO 9001:2015 Certification",
+      "CE Certification",
+      "FCC Certification",
+      "RoHS Compliance",
+      "2023 Innovation Award - Remote Control Technology"
+    ],
+    "certification": [
+      {
+        "@type": "Certification",
+        "name": "ISO 9001:2015",
+        "issuedBy": {
+          "@type": "Organization",
+          "name": "International Organization for Standardization"
+        },
+        "validFrom": "2015-06-01"
+      },
+      {
+        "@type": "Certification",
+        "name": "CE Mark",
+        "issuedBy": {
+          "@type": "Organization",
+          "name": "European Conformity"
+        },
+        "validFrom": "2010-01-01"
+      },
+      {
+        "@type": "Certification",
+        "name": "FCC Certification",
+        "issuedBy": {
+          "@type": "Organization",
+          "name": "Federal Communications Commission"
+        },
+        "validFrom": "2010-01-01"
+      }
+    ]
+  },
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FastFun RC - Professional RF Remote Control Solutions",
+    "url": "https://fastfunrc.com",
+    "description": "Professional RF remote replacement and Wi-Fi switch solutions. Compatible with LiftMaster, Chamberlain, and 80% of garage door brands. ISO 9001:2015 certified manufacturer.",
+    "inLanguage": ["en", "es", "pt", "fr", "it"],
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+    "copyrightYear": "2024",
+    "author": {
+      "@type": "Organization",
+      "name": "FastFun Remote Control",
+      "url": "https://fastfunrc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FastFun Remote Control",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fastfunrc.com/images/logo.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://fastfunrc.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      {
+        "@type": "ReadAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://fastfunrc.com/products#{product_name}"
+        },
+        "object": {
+          "@type": "Product",
+          "name": "{product_name}"
+        }
+      }
+    ],
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "RF Remote Control Products",
+      "description": "Complete range of professional RF remote control solutions",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Universal RF Remote",
+          "url": "https://fastfunrc.com/products.html#rf-remote"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "RF Controller",
+          "url": "https://fastfunrc.com/products.html#rf-controller"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Complete RF Kit",
+          "url": "https://fastfunrc.com/products.html#rf-kit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "WiFi Smart Switch",
+          "url": "https://fastfunrc.com/products.html#wifi-switch"
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Universal RF Remote",
+      "description": "Professional universal RF remote control with 433/315MHz dual frequency support. Compatible with 80%+ major garage door brands including LiftMaster, Chamberlain, Genie, and more.",
+      "url": "https://fastfunrc.com/products.html#rf-remote",
+      "image": [
+        "https://fastfunrc.com/images/rf-remote-1.jpg",
+        "https://fastfunrc.com/images/rf-remote-2.jpg",
+        "https://fastfunrc.com/images/rf-remote-3.jpg"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "FastFun RC"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "FastFun Remote Control",
+        "url": "https://fastfunrc.com"
+      },
+      "model": "FF-RC-2024",
+      "category": "Electronics > Remote Controls > Garage Door Remotes",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://fastfunrc.com/products.html#rf-remote",
+        "priceCurrency": "USD",
+        "price": "34.99",
+        "priceValidUntil": "2025-12-31",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "FastFun Remote Control"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": "0.00",
+          "shippingDestination": "Worldwide",
+          "deliveryTime": "P1D-P7D"
+        },
+        "returnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail"
+        }
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Frequency",
+          "value": "433/315MHz Dual Frequency"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Range",
+          "value": "100m+"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Battery Life",
+          "value": "2+ years"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Compatibility",
+          "value": "80%+ major brands"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Encryption",
+          "value": "Rolling Code + Fixed Code"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Warranty",
+          "value": "3 years"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1247",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "John Martinez"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "reviewBody": "Excellent universal remote! Works with all my clients' garage doors. FastFun RC's compatibility is unmatched.",
+          "datePublished": "2024-10-15"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "WiFi Smart Switch",
+      "description": "Enterprise-grade WiFi smart switch for connected facilities. Compatible with HomeKit, Google Home, Alexa, and major smart home ecosystems.",
+      "url": "https://fastfunrc.com/products.html#wifi-switch",
+      "image": [
+        "https://fastfunrc.com/images/wifi-switch-1.jpg",
+        "https://fastfunrc.com/images/wifi-switch-2.jpg"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "FastFun RC"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "FastFun Remote Control",
+        "url": "https://fastfunrc.com"
+      },
+      "model": "FF-WiFi-2024",
+      "category": "Electronics > Smart Home > Smart Switches",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://fastfunrc.com/products.html#wifi-switch",
+        "priceCurrency": "USD",
+        "price": "49.99",
+        "priceValidUntil": "2025-12-31",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "FastFun Remote Control"
+        }
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Connectivity",
+          "value": "2.4GHz WiFi"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Compatibility",
+          "value": "HomeKit, Google Home, Alexa"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power",
+          "value": "AC 100-240V"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Load Capacity",
+          "value": "15A"
+        }
+      ]
+    }
+  ],
+  "faq": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How fast can we receive custom-programmed remotes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard production orders ship within 7 business days. For OEM profiles, firmware samples are delivered within 72 hours and we maintain reserved production slots for priority accounts.",
+          "author": {
+            "@type": "Organization",
+            "name": "FastFun RC"
+          }
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you support multilingual packaging and documentation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We localize manuals, QR onboarding flows, and packaging layouts in 12 languages so regional regulations and franchise brand guidelines are met.",
+          "author": {
+            "@type": "Organization",
+            "name": "FastFun RC"
+          }
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which certifications and testing reports are included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every batch ships with CE, FCC, and RoHS certificates plus signal stability and temperature stress reports. UL or custom testing can be added on request.",
+          "author": {
+            "@type": "Organization",
+            "name": "FastFun RC"
+          }
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do FastFun RC products integrate with smart home ecosystems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our WiFi and RF modules connect with HomeKit, Google Home, and Alexa via secure APIs. For industrial clients, MQTT and Modbus gateways with dedicated solution engineers are available.",
+          "author": {
+            "@type": "Organization",
+            "name": "FastFun RC"
+          }
+        }
+      }
+    ]
+  },
+  "localBusiness": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FastFun Remote Control - Dongguan Office",
+    "description": "Manufacturing facility and corporate headquarters for FastFun RC professional RF remote control solutions.",
+    "url": "https://fastfunrc.com",
+    "telephone": "+86 158 9964 8898",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8th Floor, Building 1, Huawei Kegu",
+      "addressLocality": "Dalingshan Town",
+      "addressRegion": "Dongguan City",
+      "postalCode": "523000",
+      "addressCountry": "China"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "22.9042",
+      "longitude": "113.9127"
+    },
+    "openingHours": [
+      "Mo-Fr 09:00-18:00",
+      "Sa-Su Closed"
+    ],
+    "priceRange": "$30-100",
+    "paymentAccepted": ["Credit Card", "PayPal", "Bank Transfer", "Alipay", "WeChat Pay"],
+    "currenciesAccepted": "USD",
+    "areaServed": "Worldwide",
+    "hasMap": "https://maps.google.com/?q=FastFun+Remote+Control+Dongguan",
+    "logo": "https://fastfunrc.com/images/logo.png",
+    "image": "https://fastfunrc.com/images/office-building.jpg",
+    "sameAs": "https://fastfunrc.com"
+  },
+  "article": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Complete Guide to RF Remote Control Technology",
+    "description": "Comprehensive guide covering RF remote control technology, compatibility, installation, and troubleshooting for professional installers.",
+    "author": {
+      "@type": "Organization",
+      "name": "FastFun RC Technical Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FastFun Remote Control",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fastfunrc.com/images/logo.png"
+      }
+    },
+    "datePublished": "2024-11-01T00:00:00+00:00",
+    "dateModified": "2024-11-09T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://fastfunrc.com/blog/rf-remote-guide"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://fastfunrc.com/images/blog/rf-remote-guide.jpg",
+      "width": 1200,
+      "height": 630
+    },
+    "articleSection": "Technical Guides",
+    "wordCount": 2500,
+    "keywords": ["RF remote", "garage door", "installation guide", "troubleshooting"],
+    "inLanguage": "en",
+    "about": [
+      "RF Remote Control Technology",
+      "Garage Door Installation",
+      "Smart Home Integration"
+    ]
+  },
+  "event": {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "FastFun RC Technical Webinar - Advanced RF Solutions",
+    "description": "Free technical webinar covering advanced RF remote control solutions, compatibility testing, and smart home integration.",
+    "startDate": "2024-12-15T14:00:00+00:00",
+    "endDate": "2024-12-15T15:30:00+00:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "organizer": {
+      "@type": "Organization",
+      "name": "FastFun Remote Control",
+      "url": "https://fastfunrc.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://fastfunrc.com/webinar-registration",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2024-11-01T00:00:00+00:00"
+    },
+    "performer": {
+      "@type": "Person",
+      "name": "Technical Engineering Team",
+      "jobTitle": "RF Technology Experts"
+    },
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://fastfunrc.com/webinar-room"
+    }
+  }
+}
