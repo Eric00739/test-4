@@ -1,4 +1,4 @@
-<!-- Apple-inspired Newsletter Components -->
+<!-- Apple-inspired Newsletter Components - Fixed Version with Light Background -->
 
 <!-- Homepage Newsletter Component -->
 <section class="container">
@@ -261,7 +261,7 @@
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-xs);
-    color: white;
+    color: var(--text-primary);
 }
 
 .benefit-content p {
@@ -300,7 +300,7 @@
 .checkmark {
     width: 20px;
     height: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: var(--radius-sm);
     position: relative;
     transition: all var(--transition-fast);
@@ -308,7 +308,7 @@
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
     background: white;
-    border-color: white;
+    border-color: var(--primary-blue);
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
@@ -374,52 +374,44 @@
 }
 
 /* Blog Page Specific Styles */
-.blog-newsletter .newsletter-header {
+.newsletter-header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
 }
 
-.blog-newsletter .newsletter-benefits {
+.newsletter-benefits {
     margin-bottom: var(--spacing-xl);
 }
 
-.blog-newsletter .benefit-item {
+.benefit-item {
     background: var(--background-white);
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-light);
 }
 
-.blog-newsletter .benefit-icon {
+.benefit-icon {
     background: var(--primary-blue-light);
     color: var(--primary-blue);
 }
 
-.blog-newsletter .benefit-content h3 {
-    color: var(--text-primary);
-}
-
-.blog-newsletter .benefit-content p {
-    color: var(--text-secondary);
-}
-
-.blog-newsletter .subscription-options {
+.subscription-options {
     margin: var(--spacing-lg) 0;
 }
 
-.blog-newsletter .checkbox-label {
+.checkbox-label {
     color: var(--text-secondary);
 }
 
-.blog-newsletter .checkmark {
+.checkmark {
     border-color: var(--border-light);
     background: var(--background-white);
 }
 
-.blog-newsletter .checkbox-label input[type="checkbox"]:checked + .checkmark {
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
     border-color: var(--primary-blue);
 }
 
-.blog-newsletter .testimonial-mini {
+.testimonial-mini {
     background: var(--background-gray);
 }
 
