@@ -213,6 +213,16 @@ function updateLanguageDisplay(lang) {
     });
 }
 
+function getTranslationValue(root, keyPath) {
+    if (!root || !keyPath) return null;
+    return keyPath.split('.').reduce((obj, segment) => {
+        if (obj && Object.prototype.hasOwnProperty.call(obj, segment)) {
+            return obj[segment];
+        }
+        return null;
+    }, root);
+}
+
 function updateTranslations() {
     const langData = FastFunRC.translations[FastFunRC.currentLanguage];
     if (!langData) return;
@@ -223,13 +233,14 @@ function updateTranslations() {
     // Update elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (langData[key]) {
+        const value = getTranslationValue(langData, key);
+        if (value !== null && value !== undefined) {
             if (element.tagName === 'INPUT' && element.type === 'email') {
-                element.placeholder = langData[key];
+                element.placeholder = value;
             } else if (element.tagName === 'INPUT' && element.type === 'text') {
-                element.placeholder = langData[key];
+                element.placeholder = value;
             } else {
-                element.textContent = langData[key];
+                element.textContent = value;
             }
         }
     });
@@ -237,8 +248,9 @@ function updateTranslations() {
     // Update elements with data-i18n-placeholder attribute
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
-        if (langData[key]) {
-            element.placeholder = langData[key];
+        const value = getTranslationValue(langData, key);
+        if (value !== null && value !== undefined) {
+            element.placeholder = value;
         }
     });
     
