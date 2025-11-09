@@ -11,28 +11,100 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize Application
 async function initializeApp() {
-    // Show loading state
-    showLoadingState();
-    
-    // Load translations first
-    await loadTranslations();
-    
-    // Initialize other components
-    initializeLanguageSelector();
-    initializeMobileMenu();
-    initializeNavbar();
-    initializeForms();
-    initializeAnimations();
-    initializeSmoothScrolling();
-    initializeAccessibility();
-    
-    // Detect language from URL or use saved preference
-    const urlLanguage = detectLanguageFromUrl();
-    const savedLanguage = localStorage.getItem('preferredLanguage') || urlLanguage || 'en';
-    setLanguage(savedLanguage, false); // Don't update URL on initial load
-    
-    // Hide loading state
-    hideLoadingState();
+    try {
+        // Show loading state
+        showLoadingState();
+        
+        // Load translations first with timeout
+        await Promise.race([
+            loadTranslations(),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Translation load timeout')), 5000))
+        ]);
+        
+        // Initialize other components with error handling
+        initializeLanguageSelector();
+        initializeMobileMenu();
+        initializeNavbar();
+        initializeForms();
+        initializeAnimations();
+        initializeSmoothScrolling();
+        initializeAccessibility();
+        
+        // Detect language from URL or use saved preference
+        const urlLanguage = detectLanguageFromUrl();
+        const savedLanguage = localStorage.getItem('preferredLanguage') || urlLanguage || 'en';
+        setLanguage(savedLanguage, false); // Don't update URL on initial load
+        
+        // Hide loading state
+        hideLoadingState();
+        
+        // Add loaded class to body for CSS transitions
+        document.body.classList.add('app-loaded');
+        
+    } catch (error) {
+        console.error('App initialization error:', error);
+        
+        // Ensure fallback translations are loaded
+        if (!translations || Object.keys(translations).length === 0) {
+            translations = {
+                en: {
+                    site: {
+                        title: "FastFun Remote Control",
+                        description: "Professional RF remote replacement and Wi-Fi switch solutions."
+                    },
+                    nav: {
+                        home: "Home", about: "About", products: "Products", blog: "Blog", contact: "Contact"
+                    },
+                    loading: { message: "Loading..." }
+                }
+            };
+            currentLanguage = 'en';
+        }
+        
+        // Initialize essential components even if translation loading failed
+        try {
+            initializeLanguageSelector();
+            initializeMobileMenu();
+            initializeNavbar();
+            initializeForms();
+            initializeAnimations();
+            initializeSmoothScrolling();
+            initializeAccessibility();
+        } catch (initError) {
+            console.error('Component initialization error:', initError);
+        }
+        
+        // Hide loading state even if there was an error
+        hideLoadingState();
+        
+        // Add loaded class to body
+        document.body.classList.add('app-loaded');
+        
+        // Show error message to user (optional)
+        const errorBanner = document.createElement('div');
+        errorBanner.className = 'error-banner';
+        errorBanner.textContent = 'Some features may not be available. Please refresh the page.';
+        errorBanner.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ff6b6b;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            z-index: 10000;
+            font-size: 14px;
+        `;
+        document.body.appendChild(errorBanner);
+        
+        // Auto-hide error banner after 5 seconds
+        setTimeout(() => {
+            if (errorBanner.parentNode) {
+                errorBanner.parentNode.removeChild(errorBanner);
+            }
+        }, 5000);
+    }
 }
 
 // Load translations from JSON file
@@ -941,6 +1013,168 @@ function initializeSmoothScrolling() {
     });
 }
 
+// Accessibility Functions
+function initializeAccessibility() {
+    try {
+        // Add skip links for keyboard navigation
+        addSkipLinks();
+        
+        // Enhance focus management
+        enhanceFocusManagement();
+        
+        // Add ARIA live regions for dynamic content
+        addAriaLiveRegions();
+        
+        // Initialize keyboard navigation for interactive elements
+        initializeKeyboardNavigation();
+        
+        // Add screen reader announcements
+        initializeScreenReaderAnnouncements();
+    } catch (error) {
+        console.error('Accessibility initialization error:', error);
+    }
+}
+
+function addSkipLinks() {
+    try {
+        const skipLinks = document.createElement('div');
+        skipLinks.className = 'skip-links';
+        skipLinks.innerHTML = `
+            <a href="#main-content" class="skip-link">Skip to main content</a>
+            <a href="#navigation" class="skip-link">Skip to navigation</a>
+        `;
+        skipLinks.style.cssText = `
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #007AFF;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 0 0 4px 0;
+        `;
+        
+        // Add hover/focus styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .skip-link:focus {
+                top: 0;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        document.body.insertBefore(skipLinks, document.body.firstChild);
+    } catch (error) {
+        console.error('Error adding skip links:', error);
+    }
+}
+
+function enhanceFocusManagement() {
+    try {
+        // Add focus indicators to all interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        interactiveElements.forEach(element => {
+            element.addEventListener('focus', function() {
+                this.setAttribute('data-focused', 'true');
+            });
+            element.addEventListener('blur', function() {
+                this.removeAttribute('data-focused');
+            });
+        });
+        
+        // Add focus styles
+        const focusStyle = document.createElement('style');
+        focusStyle.textContent = `
+            [data-focused="true"] {
+                outline: 2px solid #007AFF !important;
+                outline-offset: 2px !important;
+            }
+        `;
+        document.head.appendChild(focusStyle);
+    } catch (error) {
+        console.error('Error enhancing focus management:', error);
+    }
+}
+
+function addAriaLiveRegions() {
+    try {
+        // Create a live region for announcements
+        if (!document.getElementById('aria-live-region')) {
+            const liveRegion = document.createElement('div');
+            liveRegion.id = 'aria-live-region';
+            liveRegion.setAttribute('aria-live', 'polite');
+            liveRegion.setAttribute('aria-atomic', 'true');
+            liveRegion.className = 'sr-only';
+            liveRegion.style.cssText = `
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            `;
+            document.body.appendChild(liveRegion);
+        }
+    } catch (error) {
+        console.error('Error adding ARIA live regions:', error);
+    }
+}
+
+function initializeKeyboardNavigation() {
+    try {
+        // Add keyboard support for dropdown menus
+        const dropdowns = document.querySelectorAll('.language-dropdown');
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                } else if (e.key === 'Escape') {
+                    const menu = document.getElementById('languageMenu');
+                    if (menu) {
+                        menu.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Add keyboard support for language options
+        const languageOptions = document.querySelectorAll('.language-option');
+        languageOptions.forEach(option => {
+            option.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+    } catch (error) {
+        console.error('Error initializing keyboard navigation:', error);
+    }
+}
+
+function initializeScreenReaderAnnouncements() {
+    try {
+        // Make announceToScreenReader globally available
+        window.announceToScreenReader = function(message) {
+            const liveRegion = document.getElementById('aria-live-region');
+            if (liveRegion) {
+                liveRegion.textContent = message;
+                // Clear after announcement
+                setTimeout(() => {
+                    liveRegion.textContent = '';
+                }, 1000);
+            }
+        };
+    } catch (error) {
+        console.error('Error initializing screen reader announcements:', error);
+    }
+}
+
 // Enhanced Utility Functions with performance optimizations
 function debounce(func, wait) {
     let timeout;
@@ -1060,28 +1294,94 @@ window.addEventListener('load', function() {
     }
 });
 
-// Loading state functions
+// Loading state functions with enhanced error handling
 function showLoadingState() {
-    // Create loading overlay if it doesn't exist
-    if (!document.getElementById('loadingOverlay')) {
-        const overlay = document.createElement('div');
-        overlay.id = 'loadingOverlay';
-        overlay.className = 'loading-overlay';
-        overlay.innerHTML = `
-            <div class="loading-spinner">
-                <div class="spinner"></div>
-                <p>Loading translations...</p>
-            </div>
-        `;
-        document.body.appendChild(overlay);
+    try {
+        // Create loading overlay if it doesn't exist
+        let overlay = document.getElementById('loadingOverlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'loadingOverlay';
+            overlay.className = 'loading-overlay';
+            overlay.innerHTML = `
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading translations...</p>
+                </div>
+            `;
+            
+            // Add loading styles
+            const loadingStyles = document.createElement('style');
+            loadingStyles.textContent = `
+                .loading-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255, 255, 255, 0.95);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                    backdrop-filter: blur(5px);
+                }
+                .loading-spinner {
+                    text-align: center;
+                }
+                .spinner {
+                    width: 40px;
+                    height: 40px;
+                    border: 4px solid #f3f3f3;
+                    border-top: 4px solid #007AFF;
+                    border-radius: 50%;
+                    animation: spin 1s linear infinite;
+                    margin: 0 auto 20px;
+                }
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                .app-loaded .loading-overlay {
+                    display: none !important;
+                }
+            `;
+            document.head.appendChild(loadingStyles);
+            document.body.appendChild(overlay);
+        }
+        
+        overlay.style.display = 'flex';
+        
+        // Auto-hide after 10 seconds as fallback
+        setTimeout(() => {
+            if (overlay.style.display !== 'none') {
+                console.warn('Loading overlay auto-hiding after timeout');
+                hideLoadingState();
+            }
+        }, 10000);
+        
+    } catch (error) {
+        console.error('Error showing loading state:', error);
     }
-    document.getElementById('loadingOverlay').style.display = 'flex';
 }
 
 function hideLoadingState() {
-    const overlay = document.getElementById('loadingOverlay');
-    if (overlay) {
-        overlay.style.display = 'none';
+    try {
+        const overlay = document.getElementById('loadingOverlay');
+        if (overlay) {
+            overlay.style.display = 'none';
+        }
+        
+        // Remove loading overlay after transition
+        setTimeout(() => {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay && overlay.parentNode) {
+                overlay.parentNode.removeChild(overlay);
+            }
+        }, 500);
+        
+    } catch (error) {
+        console.error('Error hiding loading state:', error);
     }
 }
 
