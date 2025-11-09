@@ -919,8 +919,17 @@ async function handleQuickQuoteForm(e) {
     }
 }
 
-// Load saved language preference
-const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-if (FastFunRC.translations[savedLanguage]) {
-    setLanguage(savedLanguage);
-}
+// Load saved language preference after translations are loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    
+    // Wait a bit for translations to load, then set language
+    setTimeout(() => {
+        if (FastFunRC.translations[savedLanguage]) {
+            setLanguage(savedLanguage);
+        } else {
+            // Fallback to English if saved language not available
+            setLanguage('en');
+        }
+    }, 100);
+});

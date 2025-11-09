@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多语言功能测试 - FastFun RC</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+        }
+        .language-selector {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056CC; }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 FastFun RC 多语言功能测试页面</h1>
+    
+    <div class="test-section">
+        <h2>📋 测试概览</h2>
+        <p>此页面用于测试多语言功能的完整性和修复效果。</p>
+        <div id="testStatus" class="test-result info">正在初始化测试...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔄 语言切换测试</h2>
+        <div class="language-selector">
+            <button onclick="testLanguage('en')">English</button>
+            <button onclick="testLanguage('es')">Español</button>
+            <button onclick="testLanguage('pt')">Português</button>
+            <button onclick="testLanguage('fr')">Français</button>
+            <button onclick="testLanguage('it')">Italiano</button>
+        </div>
+        <div id="languageTestResult" class="test-result info">点击上方按钮测试语言切换</div>
+    </div>
+
+    <div class="test-section">
+        <h2>📝 翻译键值测试</h2>
+        <div id="translationTestResult" class="test-result info">正在测试翻译键值完整性...</div>
+        <div id="missingKeys" class="code-block"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔧 功能组件测试</h2>
+        <div id="componentTestResult" class="test-result info">正在测试功能组件...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>📊 测试结果汇总</h2>
+        <div id="summaryResult" class="test-result info">测试进行中...</div>
+    </div>
+
+    <script>
+        let testResults = {
+            translationLoad: false,
+            languageSwitch: false,
+            keyCompleteness: false,
+            componentFunction: false
+        };
+
+        // 加载翻译文件
+        async function loadTranslations() {
+            try {
+                const response = await fetch('translations.json');
+                const translations = await response.json();
+                return translations;
+            } catch (error) {
+                console.error('Error loading translations:', error);
+                return null;
+            }
+        }
+
+        // 测试语言切换
+        async function testLanguage(lang) {
+            const translations = await loadTranslations();
+            const resultDiv = document.getElementById('languageTestResult');
+            
+            if (!translations) {
+                resultDiv.className = 'test-result error';
+                resultDiv.textContent = `❌ 无法加载翻译文件`;
+                return;
+            }
+
+            if (!translations[lang]) {
+                resultDiv.className = 'test-result error';
+                resultDiv.textContent = `❌ 语言 '${lang}' 不存在`;
+                return;
+            }
+
+            // 测试关键键值
+            const criticalKeys = ['nav.home', 'home.heroTitle', 'home.heroCtaPrimary', 'home.heroCtaSecondary'];
+            const missingKeys = criticalKeys.filter(key => {
+                const keys = key.split('.');
+                let value = translations[lang];
+                for (const k of keys) {
+                    value = value?.[k];
+                }
+                return !value;
+            });
+
+            if (missingKeys.length === 0) {
+                resultDiv.className = 'test-result success';
+                resultDiv.textContent = `✅ 语言 '${lang}' 切换成功，所有关键键值完整`;
+                testResults.languageSwitch = true;
+            } else {
+                resultDiv.className = 'test-result error';
+                resultDiv.textContent = `❌ 语言 '${lang}' 缺少键值: ${missingKeys.join(', ')}`;
+            }
+        }
+
+        // 测试翻译键值完整性
+        async function testTranslationCompleteness() {
+            const translations = await loadTranslations();
+            const resultDiv = document.getElementById('translationTestResult');
+            const missingKeysDiv = document.getElementById('missingKeys');
+            
+            if (!translations) {
+                resultDiv.className = 'test-result error';
+                resultDiv.textContent = '❌ 无法加载翻译文件';
+                return;
+            }
+
+            const languages = ['en', 'es', 'pt', 'fr', 'it'];
+            const baseKeys = getNestedKeys(translations.en);
+            const missingReport = {};
+
+            languages.forEach(lang => {
+                if (!translations[lang]) {
+                    missingReport[lang] = ['整个语言文件缺失'];
+                    return;
+                }
+
+                const langKeys = getNestedKeys(translations[lang]);
+                const missing = baseKeys.filter(key => !langKeys.includes(key));
+                
+                if (missing.length > 0) {
+                    missingReport[lang] = missing;
+                }
+            });
+
+            const hasMissing = Object.keys(missingReport).length > 0;
+            
+            if (hasMissing) {
+                resultDiv.className = 'test-result error';
+                resultDiv.textContent = '❌ 发现缺失的翻译键值';
+                missingKeysDiv.textContent = JSON.stringify(missingReport, null, 2);
+            } else {
+                resultDiv.className = 'test-result success';
+                resultDiv.textContent = '✅ 所有语言的翻译键值完整';
+                missingKeysDiv.textContent = '所有键值完整 ✅';
+                testResults.keyCompleteness = true;
+            }
+        }
+
+        // 获取所有嵌套键值
+        function getNestedKeys(obj, prefix = '') {
+            let keys = [];
+            for (const key in obj) {
+                const fullKey = prefix ? `${prefix}.${key}` : key;
+                if (typeof obj[key] === 'object' && obj[key] !== null) {
+                    keys = keys.concat(getNestedKeys(obj[key], fullKey));
+                } else {
+                    keys.push(fullKey);
+                }
+            }
+            return keys;
+        }
+
+        // 测试功能组件
+        async function testComponents() {
+            const resultDiv = document.getElementById('componentTestResult');
+            
+            try {
+                // 测试翻译加载函数
+                const translations = await loadTranslations();
+                if (translations) {
+                    testResults.translationLoad = true;
+                }
+
+                // 测试语言设置逻辑
+                const testLang = 'es';
+                if (translations[testLang]) {
+                    testResults.componentFunction = true;
+                }
+
+                if (testResults.translationLoad && testResults.componentFunction) {
+                    resultDiv.className = 'test-result success';
+                    resultDiv.textContent = '✅ 所有功能组件正常工作';
+                } else {
+                    resultDiv.className = 'test-result error';
+                    resultDiv.textContent = `❌ 组件测试失败: 翻译加载=${testResults.translationLoad}, 功能=${testResults.componentFunction}`;
+                }
+            } catch (error) {
+                resultDiv.className = 'test-result error';
+                resultDiv.textContent = `❌ 组件测试异常: ${error.message}`;
+            }
+        }
+
+        // 更新测试汇总
+        function updateSummary() {
+            const summaryDiv = document.getElementById('summaryResult');
+            const allPassed = Object.values(testResults).every(result => result);
+            
+            const passedTests = Object.values(testResults).filter(result => result).length;
+            const totalTests = Object.keys(testResults).length;
+            
+            if (allPassed) {
+                summaryDiv.className = 'test-result success';
+                summaryDiv.innerHTML = `🎉 多语言功能测试全部通过！(${passedTests}/${totalTests})`;
+            } else {
+                summaryDiv.className = 'test-result error';
+                summaryDiv.innerHTML = `⚠️ 部分测试失败 (${passedTests}/${totalTests})<br>
+                    翻译加载: ${testResults.translationLoad ? '✅' : '❌'}<br>
+                    语言切换: ${testResults.languageSwitch ? '✅' : '❌'}<br>
+                    键值完整: ${testResults.keyCompleteness ? '✅' : '❌'}<br>
+                    功能组件: ${testResults.componentFunction ? '✅' : '❌'}`;
+            }
+        }
+
+        // 运行所有测试
+        async function runAllTests() {
+            document.getElementById('testStatus').className = 'test-result info';
+            document.getElementById('testStatus').textContent = '🔄 正在运行所有测试...';
+            
+            await testTranslationCompleteness();
+            await testComponents();
+            updateSummary();
+            
+            document.getElementById('testStatus').className = 'test-result success';
+            document.getElementById('testStatus').textContent = '✅ 测试完成';
+        }
+
+        // 页面加载时运行测试
+        document.addEventListener('DOMContentLoaded', runAllTests);
+    </script>
+</body>
+</html>
