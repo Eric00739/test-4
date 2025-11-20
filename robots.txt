@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://fastfunrc.com/sitemap.xml
+Sitemap: https://www.fastfunremote.com/sitemap.xml
 
 # Block unnecessary crawlers
 User-agent: AhrefsBot
